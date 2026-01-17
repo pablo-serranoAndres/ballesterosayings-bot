@@ -1,0 +1,864 @@
+[
+  {
+    "id": 1,
+    "title": "Los hijos del corazón y el marido del talon",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 2,
+    "title": "Quien quiere la flor quiere las hojas de alrededor",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 3,
+    "title": "Me casé con una tonta por hacer caso a unos familiares, ellos están en su casa y yo con la tonta siempre",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 4,
+    "title": "Cada olla tiene su cobertura",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 5,
+    "title": "Si quieres hacer duelo, muerete luego",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 6,
+    "title": "Casate niña a tu gusto que tus padres moriran y no vendrán del otro mundo a ver si estas bien o mal",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 7,
+    "title": "Cuando suena la corneta, el medico a la puñeta",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 8,
+    "title": "Con dos pedos y una bufa, la cama mas caliente que una estufa",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 9,
+    "title": "Cuando el pobre amasa se hunde el horno",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 10,
+    "title": "Cuando el rico se pone el sombrero, pontelo aunque no sepas para que es",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 11,
+    "title": "Por hacer feliz a un vecino hice cornudo a mi marido",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 12,
+    "title": "Si tienes hambre muerdete el culo y comerás carne",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 13,
+    "title": "De molinero cambiarás pero de ladron no escaparás",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 14,
+    "title": "El que de servilleta llega a mantel no te fies de él",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 15,
+    "title": "Si truena por Valdegreta agua hasta la bragueta",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 16,
+    "title": "Cuando hay hambre no hay pan duro",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 17,
+    "title": "Para San Antón pasico raton y para Santa Maria hora y media crece el dia",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 18,
+    "title": "Lo que te enseña a apizar, el parir y el criar",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 19,
+    "title": "Mira si me quiere mi suegra que cuando limpia ensalada me da las hojas de afuera",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 20,
+    "title": "En la puerta del rezador no pongas trigo al sol, y en el que no reza ni trigo ni cerveza",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 21,
+    "title": "Don Preciso ya murió. No murió, que no nació",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 22,
+    "title": "Ha durado menos que una morcilla a la puerta de una perrera ",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 23,
+    "title": "El que cierne y amasa todo le pasa",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 24,
+    "title": "El que sirve sus placeres vende",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 25,
+    "title": "El que paga y miente su bolsa lo siente",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 26,
+    "title": "El que por comer no se mata lo demas tatarata",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 27,
+    "title": "El que sabe muhco no quiere mas que aprender y el que sabe poco no quiere mas que enseñar",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 28,
+    "title": "En la boca del mentiroso lo cierto se hace dudoso",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 29,
+    "title": "Cada uno con lo suyo y dios con lo de todos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 30,
+    "title": "Hacer y deshacer todo es quiacer",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 31,
+    "title": "Ande yo caliente riase la gente",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 32,
+    "title": "Mi mujer ha malparido, trabajo perdido",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 33,
+    "title": "Al que quiere saber, se le dice poco y al revés",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 34,
+    "title": "Si sale con barbas San Antón y si no la purisima concepción",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 35,
+    "title": "Hambre que espera a comer no es hambre",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 36,
+    "title": "Quien trille quien quiera, mio no es ni el pajar ni la hera",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 37,
+    "title": "La madre y el hijo se quedan en casa haciendo sus merendolas, al marido lo mandan al huerto con un pimiento y todo el dia contento",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 38,
+    "title": "100 hijos de un vientre, cada uno de su temple",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 39,
+    "title": "El comer y el rascar no cal mas que empezar",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 40,
+    "title": "Las del moño Macoco duermen sentadas paqel maño Macoco no se deshaga",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 41,
+    "title": "Pintas tanto como taragaña en Alcorisa, ¿Qué pintan? una mierda",
+    "description": "",
+    "author": ""
+  },
+  { "id": 42, "title": "Miau que es gata", "description": "", "author": "" },
+  {
+    "id": 43,
+    "title": "Ni en Caspe mejores chicas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 44,
+    "title": "Señores las once han dado, si yo estuviera en su casa como usted en la mia, señores me marcharía",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 45,
+    "title": "Buenas noches, por ahi te enroches",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 46,
+    "title": "Si esto es verdad, mis cojones son claveles",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 47,
+    "title": "Esto es un pan amasado por la gracia de Dios, si no es mas grande porque no han echado mas masa",
+    "description": "",
+    "author": ""
+  },
+  { "id": 48, "title": "Ya viene el dorodon", "description": "", "author": "" },
+  {
+    "id": 49,
+    "title": "Si en Berge esta la culebra y en Alcorisa el gazapo, en Molinos chicas guapas pa tirarlas al barranco",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 50,
+    "title": "La suegra y la nuera son 'ansas' de caldero mala pegadas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 51,
+    "title": "Buen genio tengo yo para llevar la capa larga",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 52,
+    "title": "Todos son familias, menos la nuera que no era",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 53,
+    "title": "Jugar por necesidad perder por obligación",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 54,
+    "title": "Pal ayuntamiento pasico lento y pal estao sentado",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 55,
+    "title": "A las penas puñaladas y a los pesares tragos de vino",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 56,
+    "title": "El que no trabaja de pollino, despues de asno fino",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 57,
+    "title": "La semana que viene vendrán los sastres, si no vienen el lunes vendrán el martes",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 58,
+    "title": "A los 40 no hagas cuentas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 59,
+    "title": "Como el herrero de Calatayud, corto de bienes y largo de salud",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 60,
+    "title": "Aunque reviente Teresa de Ababuj a de ser la dehesa",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 61,
+    "title": "Dos hijas y una madre la perdicion de un padre",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 62,
+    "title": "Si haces 100 y no haces una como si no hubieras hecho ninguna",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 63,
+    "title": "Vas como una refinalla",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 64,
+    "title": "¿Santa Barbara y no merendar?",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 65,
+    "title": "Gastas menos que un ciego en novelas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 66,
+    "title": "Eso esta un poco escoscao",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 67,
+    "title": "Si quieres que un duro no te falte, el primero que tengas no lo gastes",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 68,
+    "title": "Esto es cagar y envolver",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 69,
+    "title": "El mal del taco, poco mal y mucho trapo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 70,
+    "title": "De caracol para arriba todo para casa",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 71,
+    "title": "No vales ni pa tacos de escopeta",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 72,
+    "title": "Todas las manchas se quitan con agua y jabón, todas las manchas se quitan menos las del corazón",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 73,
+    "title": "A mí me da igual, ni es el pajar ni la era",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 74,
+    "title": "Quien tiene un defecto y lo reconoce, no tiene un defecto, tiene una virtud",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 75,
+    "title": "Siempre me toca bailar con la mas fea y la pieza mas larga",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 76,
+    "title": "Morena que se viste de verde ella sola se pierde",
+    "description": "",
+    "author": ""
+  },
+  { "id": 77, "title": "A trapuchar", "description": "", "author": "" },
+  {
+    "id": 78,
+    "title": "El que de verano viste a Navidad, no preguntes como le va",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 79,
+    "title": "El que por gusto duerme en el suelo no hay que compadecerlo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 80,
+    "title": "Sarna a gusto no pica... aunque mortifica",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 81,
+    "title": "El que por comer no se mata por el resto... tatarata",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 82,
+    "title": "El casamiento y la mortaja del cielo baja",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 83,
+    "title": "Un padre nuestro pa los tontos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 84,
+    "title": "Mi cabeza solo sirve para criar piojos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 85,
+    "title": "El que gana 6 y gasta 7 no necesita bolsete",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 86,
+    "title": "Mientras haya quien te presete, cuerpo no lo pases mal, madrugas una mañana y con todos quedas igual",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 87,
+    "title": "Una mujer sin pendientes es como un parador sin fuentes",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 88,
+    "title": "Poco se gana a hilar pero menos a mirar",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 89,
+    "title": "- Chica que no has hecho nudo + Si me hubiera gustado el mulo, cien veces hubiera hecho el nudo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 90,
+    "title": "Es mejor que digan: 'ahi va un cobarde', que 'ahi murió un valiente'",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 91,
+    "title": "El que no guarda leña para abril no sabe vivir",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 92,
+    "title": "El que compra barato compra por cuatro",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 93,
+    "title": "El que compra barato compra por cuatro",
+    "description": "",
+    "author": ""
+  },
+  { "id": 94, "title": "Esgarrifar", "description": "", "author": "" },
+  {
+    "id": 95,
+    "title": "En el campo las matizas tienen ojos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 96,
+    "title": "Dejalo que llore que ya tiene el mellico atao",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 97,
+    "title": "Cuando no hay pan buenas son tortas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 98,
+    "title": "Si nazco y nazco feo,  me caso y soy cabron, me muero y voy al infierno....bien poco le debo a Dios",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 99,
+    "title": "Va como una refinadera",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 100,
+    "title": "Lo poco enternece, lo mucho endurece. ",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 101,
+    "title": "Sacar y no meter es menguar y no crecer",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 102,
+    "title": "Aparta mierda... Queviene mi suegra",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 103,
+    "title": "El que mal te quiera en juicios te vea",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 104,
+    "title": "Hay madres, madrecicas y madrazas",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 105,
+    "title": "Una madre es una madre y a ti te encontré en la calle",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 106,
+    "title": "El casado su casa quiere",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 107,
+    "title": "Poco a poco hila a la vieja el copo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 108,
+    "title": "Como va a serla gente........si Dios es bueno y mata a la gente",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 109,
+    "title": "El que dice lo que no debe , se siente lo que no quiere",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 110,
+    "title": "No te des en la cabeza, ni te des en el tozuelo. Chocolate hemos de hacer aunque sea en un cazuelo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 111,
+    "title": "Viendo la garita... se ve el guardia",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 112,
+    "title": "El primero que siente la.olor....debajo tiene la flor",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 113,
+    "title": "La carne que crece no pue parar",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 114,
+    "title": "Que si si que si no...que si verdes las han segao.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 115,
+    "title": "Pagar no me pagó, pero hablar que bien me habló",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 116,
+    "title": "No te metas en camisa de once baras.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 117,
+    "title": "Donde se esté bien buen rato",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 118,
+    "title": "Noches alegres ....mañanas tristes",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 119,
+    "title": "Conoces a lelo mientras lo mandas hacelo",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 120,
+    "title": "Entre noche y día no hay pared",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 121,
+    "title": "Toda mi vida he andado, este quiero, este no quiero y he ido a parar al peor atascadero.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 122,
+    "title": "Si el sol fuera jornalero...no madrugaria tanto y se iria mas ligero.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 123,
+    "title": "O todos al tajo o todos al tocino",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 124,
+    "title": "Para vicios no quitar, vicios no dar.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 125,
+    "title": "Has matao a quien te mataba?",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 126,
+    "title": "Si usted quiere comer algo de bueno y barato, que te pongan caracoles que estará siempre lleno el plato",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 127,
+    "title": "De padres gatos, hijos mininos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 128,
+    "title": "Una mas y una menos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 129,
+    "title": "O cortas caña o a España",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 130,
+    "title": "De cojon le canta el pecho",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 131,
+    "title": "¿A la cama me voy a ir? Que ahí se muere la gente",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 132,
+    "title": "El que da de comer a perro ajeno, se queda sin pan y sin perro",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 133,
+    "title": "Agua al cuello y tarquin a la rodilla",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 134,
+    "title": "La tierra que nací por madre la conocí",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 135,
+    "title": "Con perras chufletes",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 136,
+    "title": "No digas a nadie mocoso llevando nariz",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 137,
+    "title": "Dame gordura y te dare hermosura",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 138,
+    "title": "Vale más un vecino a la puerta que un familiar a la traspuerta",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 139,
+    "title": "Nos os llevais ni un pelo conejo. ",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 140,
+    "title": "Al desnudo le hacen mas bien dos que uno",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 141,
+    "title": "O todos mochos o todos cornudos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 142,
+    "title": "Ricos de pueblo...pobres de capital.",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 143,
+    "title": "De los 40 pa arriba no te mojes la barriga",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 144,
+    "title": "A cascala putas que llueve",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 145,
+    "title": "Los hijos criaos los males doblas y casaos multiplicaos",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 146,
+    "title": "No busques al que ha sido ni al que será sino al que es",
+    "description": "",
+    "author": ""
+  },
+  {
+    "id": 147,
+    "title": "Que suerte que haya críos para echarle la culpa",
+    "description": "",
+    "author": ""
+  }
+]

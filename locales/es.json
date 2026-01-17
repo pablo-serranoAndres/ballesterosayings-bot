@@ -1,0 +1,66 @@
+{
+  "introduction": "👋 *¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
+
+  "menu": {
+    "new_saying": "Nuevo dicho",
+    "select_all_sayings": "Ver dichos",
+    "delete_saying": "Borrar dicho",
+    "update_saying": "Editar dicho",
+    "configuration": "Configuración",
+    "help": "Ayuda",
+    "next_page": "Página siguiente",
+    "previous_page": "Página anterior",
+    "home": "Volver a inicio",
+    "pagination_options": "Opciones de paginación:"
+  },
+
+  "feedback": {
+    "warning_title": "Falta título",
+    "warning_description": "Falta descripción",
+    "warning_author": "Falta autor",
+    "select_sayings": "💡 *AYUDA* \nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento."
+  },
+
+  "saying": {
+    "type": "Dicho",
+    "id": "id",
+    "title": "Título",
+    "description": "Descripción",
+    "author": "Autor"
+  },
+
+  "forms": {
+    "new_saying": {
+      "new_title": "✍️* Escribe el nuevo dicho*",
+      "new_description": "✍️* Escribe la descripción*",
+      "new_author": "✍️* Escribe autor*",
+      "save_saying": "✅* ¡Dicho guardado!*"
+    },
+    "delete": {
+      "ask_saying_id": "Introduce el id del dicho que deseeas eliminar",
+      "delete_confirmation": "Connfirmar la eliminación de: ",
+      "delete_confirmed": "Dicho eliminado ",
+      "keep_saying": "MANTENER",
+      "delete_saying": "ELIMINAR"
+    }
+  },
+
+  "icons": {
+    "title": "📜",
+    "description": "💬",
+    "author": "👤",
+    "new_saying": "✍️",
+    "select_all_sayings": "📜",
+    "delete": "🔴",
+    "update": "🔧",
+    "configuration": "⚙️",
+    "help": "💡",
+    "attention": "⚠️",
+    "error": "❗",
+    "success": "✅",
+    "pin": "📌",
+    "home": "🏠",
+    "next": "⏭️",
+    "previous": "⏮️"
+  }
+}
