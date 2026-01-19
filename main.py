@@ -3,12 +3,14 @@ import telebot
 from dotenv import load_dotenv
 from db.config import check_versions_db
 from db.service import count_sayings
-from handlers.delete_sayings import ask_id_eliminate, delete_confirmed, send_saying_for_confirmation
+from handlers.delete_sayings import handle_delete_saying
 from handlers.new_sayings import handle_new_saying
-from handlers.select_sayings import build_sayings_message, show_sayings_paginated
+from handlers.select_sayings import show_sayings_paginated
+from ui.enums.app_action import AppAction
+from ui.enums.form_status import FormStatus
 from ui.menu_options import general_menu
 from utils.locale import LOCALE
-
+from utils.bot_message import bot_message
 
 load_dotenv()
 
@@ -29,14 +31,17 @@ def onText(message):
     user_id = message.from_user.id
     chat_id = message.chat.id
     message_text = message.text
-    status = menu_status.get(user_id)
 
-    if menu_status[user_id] in ("waiting_new_saying_title", "waiting_new_saying_description", "waiting_new_saying_author", "new_saying_terminated"):
-        menu_status[user_id] = handle_new_saying(status, user_id, bot, chat_id, message_text)
+    if menu_status[user_id] in (
+        
+        FormStatus.WAITING_TITLE,
+        FormStatus.WAITING_DESCRIPTION,
+        FormStatus.WAITING_AUTHOR,
+    ):
+        menu_status[user_id] = handle_new_saying(menu_status[user_id], user_id, bot, chat_id, message_text)
 
-    if (menu_status[user_id] == "waiting_id_eliminate"):
-        send_saying_for_confirmation(bot, message_text, chat_id, user_id=user_id)
-
+    if (menu_status[user_id] == FormStatus.SEND_SAYING_DELETE):
+        handle_delete_saying(menu_status[user_id], bot, chat_id, user_id, message_text)
 
 
 # Manejador del menú
@@ -48,44 +53,41 @@ def callback_query(call):
     user_id = call.from_user.id
     chat_id = call.message.chat.id
     # Menú general
-    if call.data == "btn_insert_new_saying":
-        menu_status[user_id] = handle_new_saying("ask_title", user_id, bot, chat_id, "")
+    if call.data == AppAction.INSERT_NEW_SAYING.value:
+        menu_status[user_id] = handle_new_saying(FormStatus.NEW_SAYING, user_id, bot, chat_id, None)
 
-    elif call.data == "btn_select_all_sayings": 
+    elif call.data == AppAction.WATCH_ALL_SAYINGS.value: 
         offset[user_id] = 0
-        menu_status[user_id] = "watching_sayings"
+        menu_status[user_id] = AppAction.WATCHING_SAYINGS.value
 
-        show_sayings_paginated(bot, user_id, build_sayings_message(offset[user_id]))
+        show_sayings_paginated(bot, chat_id, offset[user_id])
 
-    elif call.data == "btn_delete_saying": 
-        menu_status[user_id] = ask_id_eliminate(bot, LOCALE["forms"]["delete"]["ask_saying_id"], chat_id)
+    elif call.data == AppAction.DELETE_SAYING.value: 
+        menu_status[user_id] = handle_delete_saying(FormStatus.ASK_ID_DELETE, bot, chat_id, user_id)
     
-    elif call.data == "btn_confirm_keep_saying":
-        bot.send_message(user_id, LOCALE["introduction"], reply_markup=general_menu(), parse_mode="Markdown")
+    elif call.data == AppAction.CONFIRM_DELETE.value:
+        handle_delete_saying(FormStatus.CONFIRM_DELETE, bot, chat_id, user_id)
 
-    elif call.data == "btn_confirm_delete_saying":
-        delete_confirmed(bot, user_id, chat_id)
-        bot.send_message(user_id, LOCALE["introduction"], reply_markup=general_menu(), parse_mode="Markdown")
+    elif call.data == AppAction.KEEP_SAYING.value:
+        bot_message(bot, chat_id, FormStatus.KEEP_SAYING, general_menu())
 
-
-
-    elif call.data == "btn_update_saying": 
+    elif call.data == AppAction.KEEP_SAYING.value: 
         bot.answer_callback_query(call.id, "update_saying")
 
     # Menú de la opción 'Ver dichos'
-    if call.data == "btn_home_page":
+    if call.data == AppAction.HOME_BUTTON.value:
         bot.send_message(user_id, LOCALE["introduction"], reply_markup=general_menu(), parse_mode="Markdown")
     
-    elif call.data == "btn_next_page":
+    elif call.data == AppAction.NEXT_PAGE_BUTTON.value:
         if (count_sayings() < offset[user_id] + 10):
             offset[user_id] = 0
         else :
             offset[user_id] = offset[user_id] + 10
 
-        if (menu_status[user_id] == "watching_sayings"):
-            show_sayings_paginated(bot, user_id, build_sayings_message(offset[user_id]))
+        if (menu_status[user_id] == AppAction.WATCHING_SAYINGS.value):
+            show_sayings_paginated(bot,chat_id, offset[user_id])
 
-    elif call.data == "btn_previous_page":
+    elif call.data == AppAction.PREVIOUS_PAGE_BUTTON.value:
         total = count_sayings()
 
         if (offset[user_id] - 10 < 0):
@@ -93,7 +95,7 @@ def callback_query(call):
         else:
             offset[user_id] -= 10
 
-        show_sayings_paginated(bot, user_id, build_sayings_message(offset[user_id]))
+        show_sayings_paginated(bot, chat_id, offset[user_id])
 
 if __name__ == "__main__":
     bot.infinity_polling()

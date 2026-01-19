@@ -17,14 +17,12 @@ def check_versions_db ():
         row = cursor.fetchone()
         version = row[0]
 
-        #print(f"Existe la tabla versions y la actual es: {version}")
     else :
         cursor.execute(create_versions_table_sql)
         cursor.execute(insert_version_table_sql)
         version = 0
 
     if(version < CURRENT_VERSION):
-        #print ("BBDD desactualizada")
         if(version <= 0) :
             cursor.execute(create_users_table_sql)
             cursor.execute(create_sayings_table_sql)

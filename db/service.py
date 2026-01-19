@@ -1,6 +1,7 @@
 from typing import List
 from db.repository import handle_db
 from models.saying import Saying
+from ui.enums.db_action import DBAction
 
 
 def count_sayings():
@@ -19,15 +20,16 @@ def format_sayings(sayings_DTO):
     return sayings_formatted
 
 def get_all_sayings(offset = 0, limit = 10):
-    sayings_DTO = handle_db("select_all_sayings", limit=limit, offset=offset)
+    sayings_DTO = handle_db(DBAction.SELECT_SAYINGS, None, None, None, limit, offset)
     
     return format_sayings(sayings_DTO)
 
 def insert_new_saying(saying: Saying, user_id: int):
     handle_db(action="insert_new_saying",saying=saying, user_id=user_id)
 
-def get_saying_by_id(saying_id:int, used_id):
+def get_saying_by_id(saying_id:int):
     saying_DTO = handle_db("select_by_id", saying_id=saying_id)
+
 
     if (saying_DTO) :
         saying_selected_to_eliminate = Saying (
@@ -37,6 +39,8 @@ def get_saying_by_id(saying_id:int, used_id):
             author= saying_DTO[3],
             )
         return saying_selected_to_eliminate
+    else :
+        return None
     
-def delete_saying_by_id (user_id, saying_id): 
+def delete_saying_by_id (saying_id): 
     handle_db(action="delete_saying",saying_id=saying_id)
