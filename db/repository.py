@@ -9,7 +9,9 @@ def handle_db(
         saying: Saying = None, 
         saying_id: int = None,
         user_id: int = None,
-        limit: int = None,
+        page_limit: int = None,
+        config_id: str = None, 
+        config_value: str = None,
         offset: int = None) :
     
     conn = sqlite3.connect("ballestero_sayings.db")
@@ -19,8 +21,8 @@ def handle_db(
         cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, user_id))
 
     elif action == DBAction.SELECT_SAYINGS:
-
-        rows = cursor.execute(select_all_sayings_sql, (limit, offset,))
+        
+        rows = cursor.execute(select_all_sayings_sql, (page_limit, offset,))
         sayings = rows.fetchall()
 
         return sayings
@@ -39,6 +41,11 @@ def handle_db(
         
     elif action == DBAction.COUNT_SAYINGS.value:
         rows = cursor.execute(count_sayings_sql)
+        
+        return rows
+    
+    elif action == DBAction.GET_LANG_CONFIG:
+        rows = cursor.execute(get_lang_config_sql, (user_id,))
         
         return rows
 

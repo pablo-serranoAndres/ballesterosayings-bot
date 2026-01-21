@@ -1,6 +1,6 @@
 {
-  "introduction": "👋 *¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
-  "new_action": "*Acción realizada*.\n\n¿Deseas continuar gestionando los contenidos? ¿Qué hacemos ahora? \n\n*Seleccione una opción*",
+  "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
+  "new_action": "*Puede continuar gestionando los contenidos seleccionando cualquier opción.*\n\n*Seleccione una opción*",
 
   "menu": {
     "new_saying": "Nuevo dicho",
@@ -12,7 +12,12 @@
     "next_page": "Página siguiente",
     "previous_page": "Página anterior",
     "home": "Volver a inicio",
-    "pagination_options": "*Opciones de paginación*:\n Puede cargar los dichos en función de lo que configure la opción 'limit' en la Configuración."
+    "pagination_options": "*Opciones de paginación*: Puede cargar los dichos en función de lo que haya configurado la variable 'limit' en la configuración.",
+    "configuration_options": "*Opciones de configuración*\n\nDesde aquí puede modificar diferentes parámetros de la aplicación.",
+    "lang_config": "Cambiar el idioma",
+    "limit_config": "Modificar límite",
+    "lang_config_help": "*Cambiar el idioma*: Con esta opción podrás elegir entre los diferentes idiomas en los que está configurada la aplicación.",
+    "limit_config_help": "*Modificar límite*: Ajustando la variable `limit` podrá modificar la cantidad de dichos que se le muestran al ver todos los dichos."
   },
 
   "feedback": {
@@ -20,12 +25,14 @@
     "warning_description": "Falta descripción",
     "warning_author": "Falta autor",
     "error": "Ha ocurrido un error inesperado",
-    "select_sayings": "💡 *AYUDA* \nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento."
+    "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
+    "save_saying": "*¡Dicho guardado!*\n,Puedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
+    "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."
   },
 
   "saying": {
     "type": "Dicho",
-    "id": "id",
+    "id": "ID",
     "title": "Título",
     "description": "Descripción",
     "author": "Autor"
@@ -33,31 +40,40 @@
 
   "forms": {
     "new_saying": {
-      "new_title": "*Nuevo dicho* \n\nIntroduce el título del nuevo dicho",
-      "new_description": "*Nuevo dicho* \n\nEscribe la descripción",
-      "new_author": "*Nuevo dicho*  \n\nEscribe autor"
-    },
-    "delete": {
-      "ask_saying_id": "*Eliminación de un dicho* \n\nIntroduce el id del dicho que deseeas eliminar",
-      "delete_confirmation": "Confirmar la eliminación de: ",
-      "keep_saying": "MANTENER",
-      "delete_saying": "ELIMINAR",
-      "no_confirm_delete": "Abortada la eliminación del dicho.",
-      "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro. ¿Qué hacemos ahora? \n\n*Seleccione una opción*"
-    },
-    "edit": {
-      "ask_saying_id": "Introduce el id del dicho que deseeas *editar*",
-      "edit_confirmation": "¿Desa editar el siguiente dicho? "
+      "new_title": "*Nuevo dicho*, Introduce el título del nuevo dicho",
+      "new_description": "*Nuevo dicho*, Escribe la descripción",
+      "new_author": "*Nuevo dicho*, Escribe autor"
     },
 
-    "feedback": {
-      "error": "Error!",
-      "save_saying": "*¡Dicho guardado!*\n\nPuedes continuar gestionando los contenidos del libro. ¿Qué hacemos ahora? \n\n*Seleccione una opción*",
-      "no_data_found": "¡Atención! \nNo se han encontrado registros que coincidan con su búsqueda."
+    "delete": {
+      "ask_saying_id": "*Eliminación de un dicho*\n\nIntroduce el ID del dicho que desees eliminar",
+      "delete_confirmation": "Confirmar la eliminación de: ",
+      "keep_saying": "Mantener",
+      "delete_saying": "Eliminar",
+      "no_confirm_delete": "Abortada la eliminación del dicho.",
+      "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro.\n\n*Seleccione una opción*"
+    },
+
+    "edit": {
+      "ask_saying_id": "*Edición de un dicho*\n,Introduce el ID del dicho que desees *editar*",
+      "title": "Editar título",
+      "description": "Editar descripción",
+      "author": "Editar autor",
+      "edit_confirmation": "¿Desea editar el siguiente dicho?"
     }
   },
 
+  "lang_config": {
+    "es": "Español",
+    "en": "Inglés",
+    "it": "Italiano",
+    "de": "Alemán",
+    "pt": "Portugués",
+    "fr": "Francés"
+  },
+
   "icons": {
+    "hello": "👋 ",
     "title": "📜",
     "description": "💬",
     "author": "👤",
@@ -73,6 +89,16 @@
     "pin": "📌",
     "home": "🏠",
     "next": "⏭️",
-    "previous": "⏮️"
+    "previous": "⏮️",
+    "switch": "🔁",
+    "limit": "✋",
+    "lang_flags": {
+      "es": "🇪🇸",
+      "en": "🇬🇧",
+      "it": "🇮🇹",
+      "de": "🇩🇪",
+      "pt": "🇵🇹",
+      "fr": "🇫🇷"
+    }
   }
 }

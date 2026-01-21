@@ -8,3 +8,7 @@ class DBAction(Enum):
     DELETE_SAYING = "delete_saying"
     UPDATE_SAYING = "update_saying"
     COUNT_SAYINGS = "count_sayings"
+    
+    UPDATE_CONFIG = "update_config"
+    GET_CONFIG = "get_config"
+    GET_LANG_CONFIG = "get_lang_config"

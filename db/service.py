@@ -19,8 +19,8 @@ def format_sayings(sayings_DTO):
     
     return sayings_formatted
 
-def get_all_sayings(offset = 0, limit = 10):
-    sayings_DTO = handle_db(DBAction.SELECT_SAYINGS, None, None, None, limit, offset)
+def get_all_sayings(offset = 0, page_limit = 10):
+    sayings_DTO = handle_db(DBAction.SELECT_SAYINGS, page_limit=page_limit, offset=offset)
     
     return format_sayings(sayings_DTO)
 
@@ -44,3 +44,15 @@ def get_saying_by_id(saying_id:int):
     
 def delete_saying_by_id (saying_id): 
     handle_db(action="delete_saying",saying_id=saying_id)
+
+def update_configig (config_id, config_value: str): 
+    handle_db(action="update_config",config_id=config_id)
+
+def get_lang_config (user_id: int): 
+    config_DAW = handle_db(
+        action=DBAction.GET_LANG_CONFIG,
+        user_id=user_id)
+    
+    lang_config = config_DAW.fetchone()[0]
+    
+    return lang_config

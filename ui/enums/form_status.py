@@ -16,4 +16,3 @@ class FormStatus(Enum):
     # Feedback    
     DATA_SAVED = "saved_data"
     NO_DATA_FOUND = "no_data_found"
-    
