@@ -21,8 +21,7 @@ def bot_message(
 
       else :
             text = get_message(user_id, form_status)
-                  #text = FORM_MESSAGES.get(form_status, LOCALE["feedback"]["error"])
-
+            
       bot.send_message(
             chat_id,
             text,

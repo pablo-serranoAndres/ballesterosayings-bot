@@ -13,20 +13,20 @@ def handle_new_saying(form_status:FormStatus, user_id:int, bot:TeleBot, chat_id:
     
     if (form_status == FormStatus.NEW_SAYING): 
         new_saying[user_id] = Saying("","","","")
-        bot_message(bot, chat_id, form_status, go_home_indicator(user_id))
+        bot_message(bot, chat_id, user_id, form_status, go_home_indicator(user_id))
         
         return FormStatus.WAITING_TITLE
     
     elif (form_status == FormStatus.WAITING_TITLE): 
         
         new_saying[user_id].title = message_text
-        bot_message(bot, chat_id, form_status, go_home_indicator(user_id))
+        bot_message(bot, chat_id, user_id, form_status, go_home_indicator(user_id))
 
         return FormStatus.WAITING_DESCRIPTION
     
     elif (form_status == FormStatus.WAITING_DESCRIPTION):
         new_saying[user_id].description = message_text
-        bot_message(bot, chat_id, form_status, go_home_indicator(user_id))
+        bot_message(bot, chat_id, user_id, form_status, go_home_indicator(user_id))
 
         return FormStatus.WAITING_AUTHOR
         
@@ -34,6 +34,6 @@ def handle_new_saying(form_status:FormStatus, user_id:int, bot:TeleBot, chat_id:
         new_saying[user_id].author = message_text
         insert_new_saying(new_saying[user_id], user_id)
         
-        bot_message(bot, chat_id, FormStatus.DATA_SAVED, general_menu(user_id))
+        bot_message(bot, chat_id, user_id, FormStatus.DATA_SAVED, general_menu(user_id))
 
         return FormStatus.DATA_SAVED

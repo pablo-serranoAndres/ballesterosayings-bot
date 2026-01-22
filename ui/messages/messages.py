@@ -20,7 +20,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
             return LOCALE[user_lang]["forms"]["new_saying"]["new_author"]
         
         elif (status == FormStatus.DATA_SAVED):
-            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["feedback"]["save_saying"]}'
+            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["feedback"]["save_saying"]}'
         
         elif (status == FormStatus.ASK_ID_DELETE):
             return f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["forms"]["delete"]["ask_saying_id"]}'
@@ -32,7 +32,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
             return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["forms"]["delete"]["confirm_delete"]}'
         
         elif (status == FormStatus.KEEP_SAYING) :
-            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["feedback"]["save_saying"]}'
+            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["delete"]["no_confirm_delete"]}'
         
         elif (status == FormStatus.NO_DATA_FOUND) : 
             return f'{LOCALE[user_lang]["icons"]["attention"]} {LOCALE[user_lang]["feedback"]["no_data_found"]}'
@@ -43,7 +43,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
     elif isinstance(status, AppAction):
         
         if (status == AppAction.INTRODUCTION) : 
-            return f'{LOCALE[user_lang]["introduction"]}'
+            return f'{LOCALE[user_lang]["icons"]["hello"]} {LOCALE[user_lang]["introduction"]}'
         
     # general_menu()
         elif (status == AppAction.INSERT_NEW_SAYING) :
@@ -59,7 +59,10 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
     
         elif (status == AppAction.CONFIG) : 
             return f'{LOCALE[user_lang]["icons"]["configuration"]} {LOCALE[user_lang]["menu"]["configuration"]}'
-            # return f'{LOCALE[user_lang]["icons"]["configuration"]} {LOCALE[user_lang]["menu"]["configuration_options"]}\n {LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}\n\n {LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["limit_config_help"]}\n'
+        
+        elif (status == AppAction.CONFIG_MENU) : 
+            f''
+            return f'{LOCALE[user_lang]["icons"]["configuration"]} {LOCALE[user_lang]["menu"]["configuration_options"]} \n\n {get_help_message(user_id, HelpFeedback.CONGIGURATION_OPTIONS)}'
     
     # go_home_indicator()
         elif (status == AppAction.HOME_PAGE) : 
@@ -129,5 +132,8 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
 
     if (app_location == HelpFeedback.PAGINATION_OPTIONS):
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["pagination_options"]}'
+    
+    elif (app_location == HelpFeedback.CONGIGURATION_OPTIONS):
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}\n{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["limit_config_help"]}'
     else :
         return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["error"]}'

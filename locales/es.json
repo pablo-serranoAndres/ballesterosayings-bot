@@ -26,7 +26,7 @@
     "warning_author": "Falta autor",
     "error": "Ha ocurrido un error inesperado",
     "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
-    "save_saying": "*¡Dicho guardado!*\n,Puedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
+    "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
     "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."
   },
 
@@ -40,17 +40,17 @@
 
   "forms": {
     "new_saying": {
-      "new_title": "*Nuevo dicho*, Introduce el título del nuevo dicho",
-      "new_description": "*Nuevo dicho*, Escribe la descripción",
-      "new_author": "*Nuevo dicho*, Escribe autor"
+      "new_title": "*Nuevo dicho*\n\nIntroduce el título del nuevo dicho",
+      "new_description": "*Nuevo dicho*\n\nEscribe la descripción",
+      "new_author": "*Nuevo dicho*\n\nEscribe autor"
     },
 
     "delete": {
       "ask_saying_id": "*Eliminación de un dicho*\n\nIntroduce el ID del dicho que desees eliminar",
-      "delete_confirmation": "Confirmar la eliminación de: ",
+      "delete_confirmation": "Confirmar la eliminación de\n",
       "keep_saying": "Mantener",
       "delete_saying": "Eliminar",
-      "no_confirm_delete": "Abortada la eliminación del dicho.",
+      "no_confirm_delete": "*Abortada la eliminación del dicho.* \n\nPuedes continuar gestionando los contenidos del libro.*Seleccione una opción*",
       "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro.\n\n*Seleccione una opción*"
     },
 

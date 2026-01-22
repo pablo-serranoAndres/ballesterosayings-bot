@@ -71,7 +71,7 @@ def callback_query(call):
         show_sayings_paginated(bot, chat_id, user_id,offset[user_id])
     
     elif call.data == AppAction.CONFIG.value: 
-        bot_message(bot, chat_id, AppAction.CONFIG,config_menu(), None)
+        bot_message(bot, chat_id, user_id,  AppAction.CONFIG_MENU,config_menu(user_id), None)
 
     # elif call.data == AppAction.LANG_CONFIG_BUTTON.value:
     #     bot.send_message(chat_id, "Lenguajes disponibles: ", reply_markup=show_langs_menu(), parse_mode="Markdown" )
@@ -90,10 +90,10 @@ def callback_query(call):
         menu_status[user_id] = handle_delete_saying(FormStatus.ASK_ID_DELETE, bot, chat_id, user_id)
     
     elif call.data == AppAction.CONFIRM_DELETE.value:
-        handle_delete_saying(FormStatus.CONFIRM_DELETE, bot, chat_id, user_id)
+        menu_status[user_id] =  handle_delete_saying(FormStatus.CONFIRM_DELETE, bot, chat_id, user_id)
 
     elif call.data == AppAction.KEEP_SAYING.value:
-        bot_message(bot, chat_id, FormStatus.KEEP_SAYING, general_menu(user_id))
+        menu_status[user_id] =  handle_delete_saying(FormStatus.KEEP_SAYING, bot, chat_id, user_id)
 
     # Menú de la opción 'Ver dichos'
     if call.data == AppAction.HOME_PAGE.value:

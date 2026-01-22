@@ -57,7 +57,7 @@ def config_menu(user_id: int):
     markup = types.InlineKeyboardMarkup(row_width=1)
 
     btn_lang_switch_config = types.InlineKeyboardButton(get_message(user_id, AppAction.LIMIT_CONFIG_BUTTON), callback_data=AppAction.LIMIT_CONFIG_BUTTON.value)
-    btn_query_limit_config = types.InlineKeyboardButton(get_message(user_id, AppAction.WATCHING_SAYINGS), callback_data=AppAction.LIMIT_CONFIG_BUTTON.value)
+    btn_query_limit_config = types.InlineKeyboardButton(get_message(user_id, AppAction.LANG_CONFIG_BUTTON), callback_data=AppAction.LANG_CONFIG_BUTTON.value)
 
     markup.add(btn_lang_switch_config, btn_query_limit_config)
 
