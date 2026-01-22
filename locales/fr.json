@@ -1,0 +1,109 @@
+{
+  "introduction": "*Bienvenue sur le bot des citations Andrés Ballestero !*\n\nAvec ce bot, vous pourrez gérer les citations de la famille Andrés Ballestero.\n\n*Choisissez une option :*",
+  "new_action": "*Vous pouvez continuer à gérer le contenu en sélectionnant n'importe quelle option.*\n\n*Sélectionnez une option*",
+
+  "menu": {
+    "new_saying": "Nouvelle citation",
+    "select_all_sayings": "Voir les citations",
+    "delete_saying": "Supprimer une citation",
+    "update_saying": "Modifier une citation",
+    "configuration": "Configuration",
+    "help": "Aide",
+    "next_page": "Page suivante",
+    "previous_page": "Page précédente",
+    "home": "Retour à l'accueil",
+    "pagination_options": "*Options de pagination* : Vous pouvez charger les citations en fonction de la valeur configurée pour la variable 'limit' dans les paramètres.",
+    "configuration_options": "*Options de configuration*\n\nVous pouvez modifier ici différents paramètres de l'application.",
+    "lang_config": "Changer la langue",
+    "limit_config": "Modifier la limite",
+    "lang_config_help": "*Changer la langue* : Cette option vous permet de choisir parmi les différentes langues configurées dans l'application.",
+    "limit_config_help": "*Modifier la limite* : En ajustant la variable `limit`, vous pouvez modifier le nombre de citations affichées lorsque vous visualisez toutes les citations."
+  },
+
+  "feedback": {
+    "warning_title": "Titre manquant",
+    "warning_description": "Description manquante",
+    "warning_author": "Auteur manquant",
+    "error": "Une erreur inattendue est survenue",
+    "select_sayings": "💡 *Aide*\nL'icône ❗ indique que la citation nécessite une modification car il manque un élément.",
+    "save_saying": "*Citation enregistrée !*\nVous pouvez continuer à gérer le contenu du livre\n\n.*Sélectionnez une option*",
+    "no_data_found": "Attention !\nAucun enregistrement correspondant à votre recherche n'a été trouvé."
+  },
+
+  "saying": {
+    "type": "Citation",
+    "id": "ID",
+    "title": "Titre",
+    "description": "Description",
+    "author": "Auteur"
+  },
+
+  "forms": {
+    "new_saying": {
+      "new_title": "*Nouvelle citation*\n\nEntrez le *titre* de la nouvelle citation",
+      "new_description": "*Nouvelle citation*\n\nÉcrivez la *description* de la nouvelle citation",
+      "new_author": "*Nouvelle citation*\n\nÉcrivez l'*auteur* de la nouvelle citation"
+    },
+
+    "delete": {
+      "ask_saying_id": "*Suppression d'une citation*\n\nEntrez l'*ID* de la citation que vous souhaitez supprimer",
+      "delete_confirmation": "Confirmer la suppression de\n",
+      "keep_saying": "Conserver",
+      "delete_saying": "Supprimer",
+      "no_confirm_delete": "*Suppression de la citation annulée.* \n\nVous pouvez continuer à gérer le contenu du livre.*Sélectionnez une option*",
+      "confirm_delete": "*Citation supprimée !*\n\nVous pouvez continuer à gérer le contenu du livre.\n\n*Sélectionnez une option*"
+    },
+
+    "edit": {
+      "ask_saying_id": "*Modification d'une citation*\nEntrez l'ID de la citation que vous souhaitez *modifier*",
+      "title": "Modifier le titre",
+      "description": "Modifier la description",
+      "author": "Modifier l'auteur",
+      "edit_confirmation": "Voulez-vous modifier la citation suivante ?"
+    },
+    "config": {
+      "lang": {
+        "title": "*Langues disponibles* :"
+      }
+    }
+  },
+
+  "lang_config": {
+    "es": "Espagnol",
+    "en": "Anglais",
+    "it": "Italien",
+    "de": "Allemand",
+    "pt": "Portugais",
+    "fr": "Français"
+  },
+
+  "icons": {
+    "hello": "👋 ",
+    "title": "📜",
+    "description": "💬",
+    "author": "👤",
+    "new_saying": "✍️",
+    "select_all_sayings": "📜",
+    "delete": "🔴",
+    "update": "🔧",
+    "configuration": "⚙️",
+    "help": "💡",
+    "attention": "⚠️",
+    "danger": "❗",
+    "success": "✅",
+    "pin": "📌",
+    "home": "🏠",
+    "next": "⏭️",
+    "previous": "⏮️",
+    "switch": "🔁",
+    "limit": "✋",
+    "lang_flags": {
+      "es": "🇪🇸",
+      "en": "🇬🇧",
+      "it": "🇮🇹",
+      "de": "🇩🇪",
+      "pt": "🇵🇹",
+      "fr": "🇫🇷"
+    }
+  }
+}

@@ -54,5 +54,12 @@ def get_lang_config (user_id: int):
         user_id=user_id)
     
     lang_config = config_DAW.fetchone()[0]
+
     
     return lang_config
+
+def save_new_lang (user_id: id, new_lang:str):
+    handle_db(action=DBAction.UPDATE_LANG_CONFIG, user_id=user_id, new_lang=new_lang)
+
+    
+

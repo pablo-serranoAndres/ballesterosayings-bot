@@ -1,6 +1,7 @@
 from telebot import types
 from ui.enums.app_action import AppAction
-from ui.messages.messages import get_message
+from ui.messages.messages import  get_lang_info, get_message
+from utils.locale import get_available_langs
 
 def general_menu(user_id: int):
     markup = types.InlineKeyboardMarkup(row_width=2)
@@ -63,4 +64,18 @@ def config_menu(user_id: int):
 
     return markup
 
+def available_langs(user_id:int):
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    available_langs = get_available_langs(user_id)
+
+    for lang in available_langs:
+        markup.add(
+            types.InlineKeyboardButton(
+                get_lang_info(user_id, lang),
+                callback_data=f'btn_switch_lang_to_{lang}'
+            )
+        )
+
+    return markup
+        
     

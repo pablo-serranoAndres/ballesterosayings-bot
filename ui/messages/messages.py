@@ -1,4 +1,7 @@
+from pathlib import Path
+from typing import List
 from db.service import get_lang_config
+from models.lang import Lang
 from models.saying import Saying
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
@@ -97,6 +100,9 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
          
         elif (status == AppAction.LANG_CONFIG_BUTTON) : 
             return f'{LOCALE[user_lang]["icons"]["switch"]} {LOCALE[user_lang]["menu"]["lang_config"]}'
+        
+        elif (status == AppAction.LANG_OPTIONS) : 
+            return f'{LOCALE[user_lang]["icons"]["switch"]} {LOCALE[user_lang]["forms"]["config"]["lang"]["title"]}'
          
         elif (status == AppAction.LIMIT_CONFIG_BUTTON) : 
             return f'{LOCALE[user_lang]["icons"]["limit"]} {LOCALE[user_lang]["menu"]["limit_config"]}'
@@ -137,3 +143,9 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}\n{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["limit_config_help"]}'
     else :
         return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["error"]}'
+
+def get_lang_info(user_id: int, lang:str):
+    user_lang = USER_LANG[user_id]
+
+    return f'{LOCALE[user_lang]["icons"]["lang_flags"][lang]} {LOCALE[user_lang]["lang_config"][lang]}'
+    

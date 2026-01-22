@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import telebot
 from db.config import check_versions_db
 from db.service import count_sayings
+from handlers.configurate_bot import handle_configuration
 from handlers.delete_sayings import handle_delete_saying
 from handlers.edit_sayings import handle_edit_saying
 from handlers.new_sayings import handle_new_saying
@@ -12,14 +13,13 @@ from ui.enums.form_status import FormStatus
 from ui.menu_options import config_menu, general_menu
 from ui.messages.messages import get_message
 from utils.bot_message import bot_message
-from utils.locale import open_locale
+from utils.locale import open_locale, switch_locale
 
 
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
-
 
 menu_status = {}
 offset = {}
@@ -73,11 +73,17 @@ def callback_query(call):
     elif call.data == AppAction.CONFIG.value: 
         bot_message(bot, chat_id, user_id,  AppAction.CONFIG_MENU,config_menu(user_id), None)
 
-    # elif call.data == AppAction.LANG_CONFIG_BUTTON.value:
-    #     bot.send_message(chat_id, "Lenguajes disponibles: ", reply_markup=show_langs_menu(), parse_mode="Markdown" )
+    elif call.data == AppAction.LANG_CONFIG_BUTTON.value:
+        menu_status[user_id] = handle_configuration(bot, chat_id, user_id, AppAction.LANG_OPTIONS)
+        # bot.send_message(chat_id, "Lenguajes disponibles: ", reply_markup=show_langs_menu(), parse_mode="Markdown" )
     
-    elif call.data.startswith("btn_switch_lang_"):
-        order =len(call.data.split("_")) - 1
+    elif call.data.startswith("btn_switch_lang_to"):
+        order = len (call.data.split("_")) - 1
+        new_lang = call.data.split("_")[order]
+
+        switch_locale(user_id, new_lang)
+        bot_message(bot, chat_id, user_id, AppAction.BACK_HOME, general_menu(user_id=user_id), None)
+        
     
     elif call.data == AppAction.LIMIT_CONFIG_BUTTON.value:
         print("boton para cambiar limit")

@@ -41,13 +41,18 @@ create_sayings_table_sql = '''
 create_config_table_sql = '''
             CREATE TABLE IF NOT EXISTS config (
                id_user INTEGER PRIMARY KEY,
-               lang TEXT NOT NULL DEFAULT 'es',
-               page_limit  INTEGER NOT NULL DEFAULT 10
+               lang TEXT,
+               page_limit
                )
             '''
 insert_base_config_sql = '''
             INSERT OR IGNORE INTO config (id_user, lang, page_limit )
             VALUES (?, "es", 10)
+            '''
+update_lang_config_sql = '''
+            UPDATE config
+            SET lang = ?
+            WHERE id_user = ?
             '''
 get_lang_config_sql = '''
             SELECT lang FROM config 

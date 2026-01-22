@@ -12,3 +12,4 @@ class DBAction(Enum):
     UPDATE_CONFIG = "update_config"
     GET_CONFIG = "get_config"
     GET_LANG_CONFIG = "get_lang_config"
+    UPDATE_LANG_CONFIG = "update_lang_config"

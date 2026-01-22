@@ -30,6 +30,7 @@ class AppAction(Enum):
     #CONFIG_BUTTON = "btn_config"
     CONFIG_MENU = "configuration_menu"
     LANG_CONFIG_BUTTON = "btn_lang_switch_config"
+    LANG_OPTIONS = "lang_options"
     LIMIT_CONFIG_BUTTON = "btn_query_limit_config"
     
         # Status (?)

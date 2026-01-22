@@ -12,7 +12,8 @@ def handle_db(
         page_limit: int = None,
         config_id: str = None, 
         config_value: str = None,
-        offset: int = None) :
+        offset: int = None,
+        new_lang:str = None) :
     
     conn = sqlite3.connect("ballestero_sayings.db")
     cursor = conn.cursor()
@@ -48,6 +49,11 @@ def handle_db(
         rows = cursor.execute(get_lang_config_sql, (user_id,))
         
         return rows
+    
+    elif action == DBAction.UPDATE_LANG_CONFIG:
+        
+        cursor.execute(update_lang_config_sql, (new_lang.strip(), user_id,))
+
 
     conn.commit()
     cursor.close()
