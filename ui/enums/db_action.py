@@ -13,3 +13,8 @@ class DBAction(Enum):
     GET_CONFIG = "get_config"
     GET_LANG_CONFIG = "get_lang_config"
     UPDATE_LANG_CONFIG = "update_lang_config"
+    INSERT_NEW_LANG = "insert_lang"
+
+    INSERT_USER = "insert_user"
+    GET_USER_BY_ID = "get_user"
+    

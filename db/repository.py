@@ -1,6 +1,7 @@
 import sqlite3
 from db.sql import *
 from models.saying import Saying
+from models.user import User
 from ui.enums.db_action import DBAction
 
 
@@ -8,30 +9,23 @@ def handle_db(
         action:DBAction, 
         saying: Saying = None, 
         saying_id: int = None,
-        user_id: int = None,
-        page_limit: int = None,
-        config_id: str = None, 
-        config_value: str = None,
-        offset: int = None,
-        new_lang:str = None) :
+        session:User = None) :
     
     conn = sqlite3.connect("ballestero_sayings.db")
     cursor = conn.cursor()
 
     if action == DBAction.INSERT_SAYING.value:
-        cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, user_id))
+        cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, session.user_id))
 
     elif action == DBAction.SELECT_SAYINGS:
-        
-        rows = cursor.execute(select_all_sayings_sql, (page_limit, offset,))
+        print(session.offset)
+        rows = cursor.execute(select_all_sayings_sql, (10, 0,))
         sayings = rows.fetchall()
-
         return sayings
     
     elif action == DBAction.SELECT_SAYING_BY_ID.value:
         row = cursor.execute(select_saying_by_id_sql, (saying_id,))
         saying = row.fetchone()
-
         return saying
     
     elif action == DBAction.DELETE_SAYING.value:
@@ -42,17 +36,27 @@ def handle_db(
         
     elif action == DBAction.COUNT_SAYINGS.value:
         rows = cursor.execute(count_sayings_sql)
-        
         return rows
     
-    elif action == DBAction.GET_LANG_CONFIG:
-        rows = cursor.execute(get_lang_config_sql, (user_id,))
-        
-        return rows
-    
+    # elif action == DBAction.GET_LANG_CONFIG:
+    #     rows = cursor.execute(get_lang_config_sql, (user_id,))
+    #     return rows
+
     elif action == DBAction.UPDATE_LANG_CONFIG:
+        cursor.execute(update_lang_config_sql, (session.lang.strip(), session.user_id, ))
+    
+    # elif action == DBAction.INSERT_NEW_LANG:
+    #     cursor.execute(insert_lang_config_sql, (user_id, new_lang.strip(),))
+
+    elif action == DBAction.INSERT_USER:
+        cursor.execute(insert_user_sql, (session.user_id, session.username, session.menu_status.value, session.offset, session.page_limit, session.lang))
+    
+    elif action == DBAction.GET_USER_BY_ID:
+        user = cursor.execute(get_user_by_id_sql, (session.user_id,))
         
-        cursor.execute(update_lang_config_sql, (new_lang.strip(), user_id,))
+        return user.fetchone()
+
+        # return user.fetchall()
 
 
     conn.commit()

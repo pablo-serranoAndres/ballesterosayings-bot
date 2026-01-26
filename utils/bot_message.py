@@ -3,7 +3,6 @@ from models.saying import Saying
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
 from ui.messages.messages import build_saying_display, get_message
-from utils.locale import LOCALE
 
 def bot_message(
             bot:TeleBot, 
@@ -16,8 +15,8 @@ def bot_message(
       if (saying) :
             if (form_status == FormStatus.SEND_SAYING_DELETE) :
                   text = build_saying_display(saying, form_status, user_id)
-            # elif (form_status == AppAction.SEND_SAYING_EDIT) :
-            #       text = build_saying_display(saying, form_status)
+            elif (form_status == FormStatus.SEND_SAYING_UPDATE) :
+                  text = build_saying_display(saying, form_status, user_id)
 
       else :
             text = get_message(user_id, form_status)

@@ -31,12 +31,14 @@ class AppAction(Enum):
     CONFIG_MENU = "configuration_menu"
     LANG_CONFIG_BUTTON = "btn_lang_switch_config"
     LANG_OPTIONS = "lang_options"
+    INTRO_LANG_OPTIONS = "intro_lang_options"
     LIMIT_CONFIG_BUTTON = "btn_query_limit_config"
     
         # Status (?)
     INTRODUCTION = "app_introduction"
     BACK_HOME = "app_back_home"
     WATCHING_SAYINGS = "watching_sayings"
+    EDITING_SAYING = "editing saying"
 
 
     

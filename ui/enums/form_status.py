@@ -13,6 +13,14 @@ class FormStatus(Enum):
     CONFIRM_DELETE = "confirm_delete"
     KEEP_SAYING = "keep_saying"
 
+    #Edit saying
+    ASK_ID_UPDATE = "update_saying"
+    WAITING_ID_UPDATE = "waiting_id_update"
+    SEND_SAYING_UPDATE = "send_saying_update"
+
+
     # Feedback    
     DATA_SAVED = "saved_data"
     NO_DATA_FOUND = "no_data_found"
+    REGISTERING_USER = "registering user"
+    HANDLE_LANGS = "handling_langs"

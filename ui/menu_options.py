@@ -44,7 +44,7 @@ def saying_item_delete(user_id: int):
     return markup
 
 def saying_item_edit(user_id: int): 
-    markup = types.InlineKeyboardMarkup(row_width=4)
+    markup = types.InlineKeyboardMarkup(row_width=3)
 
     btn_edit_title = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_TITLE), callback_data=AppAction.EDIT_TITLE.value)
     btn_edit_description = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_DESCRIPTION), callback_data=AppAction.EDIT_DESCRIPTION.value)
@@ -66,7 +66,7 @@ def config_menu(user_id: int):
 
 def available_langs(user_id:int):
     markup = types.InlineKeyboardMarkup(row_width=1)
-    available_langs = get_available_langs(user_id)
+    available_langs = get_available_langs()
 
     for lang in available_langs:
         markup.add(

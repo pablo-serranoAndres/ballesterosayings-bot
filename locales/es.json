@@ -12,7 +12,8 @@
     "next_page": "Página siguiente",
     "previous_page": "Página anterior",
     "home": "Volver a inicio",
-    "pagination_options": "*Opciones de paginación*: Puede cargar los dichos en función de lo que haya configurado la variable 'limit' en la configuración.",
+    "pick_one": "Seleccione una opción",
+    "pagination_options": "*Opciones de paginación*: Puede cargar los dichos en función de lo que haya configurado la variable `limit` en la configuración.",
     "configuration_options": "*Opciones de configuración*\n\nDesde aquí puede modificar diferentes parámetros de la aplicación.",
     "lang_config": "Cambiar el idioma",
     "limit_config": "Modificar límite",
@@ -55,10 +56,11 @@
     },
 
     "edit": {
-      "ask_saying_id": "*Edición de un dicho*\n,Introduce el ID del dicho que desees *editar*",
-      "title": "Editar título",
-      "description": "Editar descripción",
-      "author": "Editar autor",
+      "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
+      "title": "Título",
+      "description": "Descripción",
+      "author": "Autor",
+      "pick_option": "Seleccione el campo que desee editar:",
       "edit_confirmation": "¿Desea editar el siguiente dicho?"
     },
     "config": {

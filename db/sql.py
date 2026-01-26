@@ -25,8 +25,12 @@ update_version_table_sql = '''
 create_users_table_sql = '''
             CREATE TABLE IF NOT EXISTS users (
                id INTEGER PRIMARY KEY,
-               telegram_id INTEGER UNIQUE,
-               name TEXT
+               user_id INTEGER UNIQUE,
+               username TEXT,
+               menu_status TEXT,
+               offset INTEGER DEFAULT 0, 
+               page_limit INTEGER DEFAULT 10,
+               lang TEXT DEFAULT 'es'
                )
             '''
 create_sayings_table_sql = '''
@@ -38,37 +42,22 @@ create_sayings_table_sql = '''
                user_id INTEGER DEFAULT 0
                )
             '''
-create_config_table_sql = '''
-            CREATE TABLE IF NOT EXISTS config (
-               id_user INTEGER PRIMARY KEY,
-               lang TEXT,
-               page_limit
-               )
-            '''
-insert_base_config_sql = '''
-            INSERT OR IGNORE INTO config (id_user, lang, page_limit )
-            VALUES (?, "es", 10)
-            '''
-update_lang_config_sql = '''
-            UPDATE config
-            SET lang = ?
-            WHERE id_user = ?
-            '''
-get_lang_config_sql = '''
-            SELECT lang FROM config 
-            WHERE id_user = ?
-            '''
-
 # USERS SENTENCES
 insert_user_sql = '''
-            INSERT OR IGNORE INTO users (telegram_id, name)
-            VALUES (?, ?)
+            INSERT OR IGNORE INTO users (user_id, username, menu_status, offset, page_limit, lang)
+            VALUES (?, ?, ?, ?, ?, ?)
             '''
 
-get_user_sql = '''
+get_user_by_id_sql = '''
             SELECT * FROM users 
-            WHERE telegram_id = ?
+            WHERE user_id = ?
             '''
+update_lang_config_sql = '''
+            UPDATE users
+            SET lang = ?
+            WHERE user_id = ?
+            '''
+
 # SAYINGS SENTENCES
 insert_new_saying_sql = '''
             INSERT OR IGNORE INTO sayings (title, description, author, user_id)
@@ -90,14 +79,7 @@ delete_saying_by_id_sql = '''
             DELETE FROM sayings
             WHERE id = ? 
             '''
-delete_saying_sql = '''
-            INSERT OR IGNORE INTO users (telegram_id, name)
-            VALUES (?, ?)
-            '''
-update_saying_sql = '''
-            INSERT OR IGNORE INTO users (telegram_id, name)
-            VALUES (?, ?)
-            '''
+
 insert_current_sayings_sql = '''
             INSERT OR IGNORE INTO sayings (id, title, description, author) 
             VALUES

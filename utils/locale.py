@@ -2,15 +2,13 @@ import json
 import os
 from pathlib import Path
 from typing import List
-from db.service import get_lang_config, save_new_lang
+from db.service import update_lang
+from utils.sessions import SESSIONS
 
 LOCALE = {}
-USER_LANG = {}
 
-def open_locale(user_id:int) : 
-    USER_LANG[user_id] = get_lang_config(user_id) or "en"
-
-    user_lang = USER_LANG[user_id]
+def open_locale(user_id:int) :
+    user_lang = SESSIONS[user_id].lang
     
     file_path = Path("locales", f'{user_lang}.json')
 
@@ -21,13 +19,13 @@ def open_locale(user_id:int) :
         LOCALE[user_lang] = json.load(file)
 
 def switch_locale(user_id: int, new_lang: str):
-    save_new_lang(user_id, new_lang)
-    USER_LANG[user_id] = new_lang
+    SESSIONS[user_id].lang = new_lang
+    update_lang(user_id, new_lang)
     
     open_locale(user_id)
 
 
-def get_available_langs(user_id:int):
+def get_available_langs():
     available_langs: List[str] = []
 
     for file in Path("locales").iterdir():

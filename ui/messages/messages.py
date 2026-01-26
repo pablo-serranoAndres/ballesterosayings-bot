@@ -1,16 +1,14 @@
-from pathlib import Path
-from typing import List
-from db.service import get_lang_config
-from models.lang import Lang
+
 from models.saying import Saying
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
 from ui.enums.help_feedback import HelpFeedback
-from utils.locale import LOCALE, USER_LANG
+from utils.locale import LOCALE
+from utils.sessions import SESSIONS
 
 def get_message(user_id:int, status: FormStatus | AppAction) -> str :
     # user_lang = get_lang_config(user_id)
-    user_lang = USER_LANG[user_id]
+    user_lang = SESSIONS[user_id].lang
 
     if isinstance(status, FormStatus) :
         if (status == FormStatus.NEW_SAYING):
@@ -36,6 +34,9 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         
         elif (status == FormStatus.KEEP_SAYING) :
             return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["delete"]["no_confirm_delete"]}'
+        
+        elif (status == FormStatus.ASK_ID_UPDATE) :
+            return f'{LOCALE[user_lang]["icons"]["title"]} {LOCALE[user_lang]["forms"]["edit"]["ask_saying_id"]}'
         
         elif (status == FormStatus.NO_DATA_FOUND) : 
             return f'{LOCALE[user_lang]["icons"]["attention"]} {LOCALE[user_lang]["feedback"]["no_data_found"]}'
@@ -88,12 +89,13 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
             return f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["forms"]["delete"]["delete_saying"]}'
         
 
-    # saying_item_edit()     
+    # saying_item_edit()
+        
         elif (status == AppAction.EDIT_TITLE) : 
             return f'{LOCALE[user_lang]["icons"]["title"]} {LOCALE[user_lang]["forms"]["edit"]["title"]}'
         
         elif (status == AppAction.EDIT_DESCRIPTION) : 
-            return f'{LOCALE[user_lang]["icons"]["description"]} {LOCALE[user_lang]["edit"]["forms"]["description"]}'
+            return f'{LOCALE[user_lang]["icons"]["description"]} {LOCALE[user_lang]["forms"]["edit"]["description"]}'
         
         elif (status == AppAction.EDIT_AUTHOR) : 
             return f'{LOCALE[user_lang]["icons"]["author"]} {LOCALE[user_lang]["forms"]["edit"]["author"]}'
@@ -103,7 +105,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         
         elif (status == AppAction.LANG_OPTIONS) : 
             return f'{LOCALE[user_lang]["icons"]["switch"]} {LOCALE[user_lang]["forms"]["config"]["lang"]["title"]}'
-         
+
         elif (status == AppAction.LIMIT_CONFIG_BUTTON) : 
             return f'{LOCALE[user_lang]["icons"]["limit"]} {LOCALE[user_lang]["menu"]["limit_config"]}'
         
@@ -117,24 +119,32 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         return f'{LOCALE[user_lang]["feedback"]["error"]}'
 
 def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
-    user_lang = USER_LANG[user_id]
+    user_lang = SESSIONS[user_id].lang
     header = ""
+    footer = ""
 
     if (form_status == FormStatus.SEND_SAYING_DELETE): 
-        header = LOCALE[user_lang]["forms"]["delete"]["delete_confirmation"]
-
+        header = f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["forms"]["delete"]["delete_confirmation"]}' 
+    
+    elif (form_status == FormStatus.SEND_SAYING_UPDATE):
+        header = f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["edit"]["edit_confirmation"]}' 
+        footer = f'*{LOCALE[user_lang]["forms"]["edit"]["pick_option"]}*'
+        
     return (
         f'''
 {header}
-*{LOCALE[user_lang]["icons"]["pin"]} {LOCALE[user_lang]["saying"]["type"]}  #{saying.id}*
+
+*{LOCALE[user_lang]["icons"]["pin"]} {LOCALE[user_lang]["saying"]["type"]}*  *#{saying.id}*
+
 {LOCALE[user_lang]["icons"]["title"]} _{LOCALE[user_lang]["saying"]["title"]}_: {saying.title}
 {LOCALE[user_lang]["icons"]["description"]} _{LOCALE[user_lang]["saying"]["description"]}_: {saying.description}
 {LOCALE[user_lang]["icons"]["author"]} _{LOCALE[user_lang]["saying"]["author"]}_: {saying.author}
+{footer}
     '''
     )
 
 def get_help_message (user_id:int, app_location:HelpFeedback) :
-    user_lang = USER_LANG[user_id]
+    user_lang = SESSIONS[user_id].lang
 
     if (app_location == HelpFeedback.PAGINATION_OPTIONS):
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["pagination_options"]}'
@@ -145,7 +155,9 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
         return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["error"]}'
 
 def get_lang_info(user_id: int, lang:str):
-    user_lang = USER_LANG[user_id]
+    # user_lang = USER_LANG[user_id]
+    user_lang = SESSIONS[user_id].lang
+
 
     return f'{LOCALE[user_lang]["icons"]["lang_flags"][lang]} {LOCALE[user_lang]["lang_config"][lang]}'
     

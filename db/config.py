@@ -6,7 +6,7 @@ load_dotenv()
 
 CURRENT_VERSION = 1
 
-def check_versions_db (user_id: int):
+def check_versions_db ():
     conn = sqlite3.connect("ballestero_sayings.db")
     cursor = conn.cursor()
     
@@ -26,10 +26,7 @@ def check_versions_db (user_id: int):
         if(version <= 0) :
             cursor.execute(create_users_table_sql)
             cursor.execute(create_sayings_table_sql)
-
-            cursor.execute(create_config_table_sql)
-            cursor.execute(insert_base_config_sql, (user_id,))
-
+            # cursor.execute(insert_base_config_sql, (user_id,))
             cursor.execute(insert_current_sayings_sql)
             cursor.execute(update_version_table_sql, (CURRENT_VERSION,))
             

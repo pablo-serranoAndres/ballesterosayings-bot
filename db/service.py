@@ -1,6 +1,7 @@
 from typing import List
 from db.repository import handle_db
 from models.saying import Saying
+from models.user import User
 from ui.enums.db_action import DBAction
 
 
@@ -19,8 +20,8 @@ def format_sayings(sayings_DTO):
     
     return sayings_formatted
 
-def get_all_sayings(offset = 0, page_limit = 10):
-    sayings_DTO = handle_db(DBAction.SELECT_SAYINGS, page_limit=page_limit, offset=offset)
+def get_all_sayings(session:User):
+    sayings_DTO = handle_db(action=DBAction.SELECT_SAYINGS, session=session,)
     
     return format_sayings(sayings_DTO)
 
@@ -32,34 +33,43 @@ def get_saying_by_id(saying_id:int):
 
 
     if (saying_DTO) :
-        saying_selected_to_eliminate = Saying (
+        saying_selected = Saying (
             id= saying_DTO[0],
             title= saying_DTO[1],
             description= saying_DTO[2],
             author= saying_DTO[3],
             )
-        return saying_selected_to_eliminate
+        return saying_selected
     else :
         return None
     
 def delete_saying_by_id (saying_id): 
     handle_db(action="delete_saying",saying_id=saying_id)
 
-def update_configig (config_id, config_value: str): 
-    handle_db(action="update_config",config_id=config_id)
 
-def get_lang_config (user_id: int): 
-    config_DAW = handle_db(
-        action=DBAction.GET_LANG_CONFIG,
-        user_id=user_id)
+# def get_lang_config (user_id: int): 
+#     config_DAW = handle_db(
+#         action=DBAction.GET_LANG_CONFIG,
+#         user_id=user_id)
     
-    lang_config = config_DAW.fetchone()[0]
+#     lang_config = config_DAW.fetchone()[0]
 
     
-    return lang_config
+#     return lang_config
 
-def save_new_lang (user_id: id, new_lang:str):
-    handle_db(action=DBAction.UPDATE_LANG_CONFIG, user_id=user_id, new_lang=new_lang)
+# def insert_lang (user_id: int, new_lang:str):
+#     handle_db(action=DBAction.INSERT_NEW_LANG, user_id=user_id, new_lang=new_lang)
 
-    
+def update_lang (user: User):
+    handle_db(action=DBAction.UPDATE_LANG_CONFIG, user=user,)
+
+def insert_new_user (session: User):
+    handle_db(action=DBAction.INSERT_USER, session=session, )
+
+def get_user_by_id (session: User) -> User:
+    user = handle_db(action=DBAction.GET_USER_BY_ID, user_id=session.user_id)
+    return user
+
+
+
 
