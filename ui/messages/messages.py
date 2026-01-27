@@ -35,7 +35,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         elif (status == FormStatus.KEEP_SAYING) :
             return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["delete"]["no_confirm_delete"]}'
         
-        elif (status == FormStatus.ASK_ID_UPDATE) :
+        elif (status == FormStatus.WAITING_ID_UPDATE) :
             return f'{LOCALE[user_lang]["icons"]["title"]} {LOCALE[user_lang]["forms"]["edit"]["ask_saying_id"]}'
         
         elif (status == FormStatus.NO_DATA_FOUND) : 
@@ -46,6 +46,15 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         
         elif (status == FormStatus.HANDLE_LANGS) : 
             return f'{LOCALE[user_lang]["icons"]["switch"]} {LOCALE[user_lang]["forms"]["config"]["lang"]["title"]}'
+        
+        elif (status == FormStatus.EDITING_TITLE) : 
+            return f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["edit"]["editing_title"]}'
+        
+        elif (status == FormStatus.EDITING_DESCRIPTION) : 
+            return f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["edit"]["editing_description"]}'
+        
+        elif (status == FormStatus.EDITING_AUTHOR) : 
+            return f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["edit"]["editing_author"]}'
     
     elif isinstance(status, AppAction):
         
@@ -102,6 +111,12 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         
         elif (status == AppAction.EDIT_AUTHOR) : 
             return f'{LOCALE[user_lang]["icons"]["author"]} {LOCALE[user_lang]["forms"]["edit"]["author"]}'
+        
+        elif (status == AppAction.NOT_SAVE) : 
+            return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["forms"]["edit"]["not_save"]}'
+        
+        elif (status == AppAction.SAVE_CHANGES) : 
+            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["edit"]["save_changes"]}'
          
         elif (status == AppAction.LANG_CONFIG_BUTTON) : 
             return f'{LOCALE[user_lang]["icons"]["switch"]} {LOCALE[user_lang]["menu"]["lang_config"]}'
@@ -111,6 +126,8 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         
         elif (status == AppAction.BACK_HOME) : 
             return f'{LOCALE[user_lang]["new_action"]}'
+        
+        
 
         # elif (status == AppAction.WATCHING_SAYINGS) : 
         #     return

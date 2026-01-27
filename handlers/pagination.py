@@ -8,12 +8,12 @@ from utils.bot_message import bot_message
 from utils.sessions import SESSIONS
 
 
-def handle_cb_go_home(session:User, bot:TeleBot, chat_id:int):
+def handle_cb_go_home(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
     bot_message(bot, chat_id, session.user_id, AppAction.BACK_HOME, general_menu(session.user_id), None)
     session.menu_status = AppAction.INTRODUCTION
 
 
-def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int):
+def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
     if (count_sayings() < session.offset + 10):
         session.offset = 0
     
@@ -22,7 +22,7 @@ def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int):
 
     show_sayings_paginated(bot, chat_id, session)
     
-def handle_cb_go_previous(session:User, bot:TeleBot, chat_id:int):
+def handle_cb_go_previous(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
     total = count_sayings()
 
     if (session.offset - 10 < 0):

@@ -8,7 +8,7 @@ from ui.menu_options import next_previous_indicators
 from ui.messages.messages import build_saying_display, get_help_message
 from utils.sessions import SESSIONS
 
-def handle_cb_watch_all_sayings(session:User, bot:TeleBot, chat_id: int):
+def handle_cb_watch_all_sayings(session:User, bot:TeleBot, chat_id: int, aditional_params:str):
     SESSIONS[session.user_id].offset = 0
     SESSIONS[session.user_id].menu_status = AppAction.WATCHING_SAYINGS
 

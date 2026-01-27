@@ -17,6 +17,9 @@ class FormStatus(Enum):
     ASK_ID_UPDATE = "update_saying"
     WAITING_ID_UPDATE = "waiting_id_update"
     SEND_SAYING_UPDATE = "send_saying_update"
+    EDITING_TITLE = "editing_title"
+    EDITING_DESCRIPTION = "editing_description"
+    EDITING_AUTHOR = "editing_author"
 
 
     # Feedback    

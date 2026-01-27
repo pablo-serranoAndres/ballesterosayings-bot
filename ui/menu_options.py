@@ -43,15 +43,17 @@ def saying_item_delete(user_id: int):
     markup.add(btn_keep_saying, btn_delete_saying)
     return markup
 
-def saying_item_edit(user_id: int): 
+def saying_item_edit(user_id: int, saying_id: int): 
     markup = types.InlineKeyboardMarkup(row_width=3)
 
-    btn_edit_title = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_TITLE), callback_data=AppAction.EDIT_TITLE.value)
-    btn_edit_description = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_DESCRIPTION), callback_data=AppAction.EDIT_DESCRIPTION.value)
-    btn_edit_author = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_AUTHOR), callback_data=AppAction.EDIT_AUTHOR.value)
-    btn_home = types.InlineKeyboardButton(get_message(user_id, AppAction.HOME_PAGE), callback_data=AppAction.HOME_PAGE.value)
-
-    markup.add(btn_edit_title, btn_edit_description, btn_edit_author, btn_home)
+    btn_edit_title = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_TITLE), callback_data=f'{AppAction.EDIT_TITLE.value};title-{saying_id}')
+    btn_edit_description = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_DESCRIPTION), callback_data=f'{AppAction.EDIT_DESCRIPTION.value};description-{saying_id}')
+    btn_edit_author = types.InlineKeyboardButton(get_message(user_id,AppAction.EDIT_AUTHOR), callback_data=f'{AppAction.EDIT_AUTHOR.value};author-{saying_id}')
+    
+    btn_home = types.InlineKeyboardButton(get_message(user_id, AppAction.NOT_SAVE), callback_data=AppAction.HOME_PAGE.value)
+    btn_save = types.InlineKeyboardButton(get_message(user_id, AppAction.SAVE_CHANGES), callback_data=AppAction.SAVE_CHANGES.value)
+    
+    markup.add(btn_edit_title, btn_edit_description, btn_edit_author, btn_home, btn_save)
     return markup
 
 def config_menu(user_id: int): 
@@ -72,7 +74,7 @@ def available_langs(user_id:int):
         markup.add(
             types.InlineKeyboardButton(
                 get_lang_info(user_id, lang),
-                callback_data=f'btn_switch_lang_to_{lang}'
+                callback_data=f'btn_switch_lang_to;{lang}'
             )
         )
     btn_home = types.InlineKeyboardButton(get_message(user_id, AppAction.HOME_PAGE), callback_data=AppAction.HOME_PAGE.value)

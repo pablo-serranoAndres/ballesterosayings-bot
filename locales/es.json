@@ -57,11 +57,16 @@
 
     "edit": {
       "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
+      "editing_title": "*Edición de un dicho*\n\nIntroduce el *nuevo título* del dicho.",
+      "editing_description": "*Edición de un dicho*\n\nIntroduce la *nueva descripción* del dicho.",
+      "editing_author": "*Edición de un dicho*\n\nIntroduce el *nuevo autor* del dicho.",
       "title": "Título",
       "description": "Descripción",
       "author": "Autor",
+      "not_save": "Descartar cambios",
+      "save_changes": "Guardar cambios",
       "pick_option": "Seleccione el campo que desee editar:",
-      "edit_confirmation": "¿Desea editar el siguiente dicho?"
+      "edit_confirmation": "¿Desea editar el siguiente dicho? \n"
     },
     "config": {
       "lang": {

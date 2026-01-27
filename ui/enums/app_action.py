@@ -25,6 +25,8 @@ class AppAction(Enum):
     EDIT_TITLE = "btn_edit_title"
     EDIT_DESCRIPTION = "btn_edit_description"
     EDIT_AUTHOR = "btn_edit_author"
+    NOT_SAVE = "btn_not_save"
+    SAVE_CHANGES = "btn_save_changes"
     
         # Config Menu
     #CONFIG_BUTTON = "btn_config"
@@ -39,6 +41,7 @@ class AppAction(Enum):
     BACK_HOME = "app_back_home"
     WATCHING_SAYINGS = "watching_sayings"
     EDITING_SAYING = "editing saying"
+    LANG_SWITCH = "btn_switch_lang_to"
 
 
     

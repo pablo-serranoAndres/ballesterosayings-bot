@@ -25,8 +25,8 @@ def get_all_sayings(session:User):
     
     return format_sayings(sayings_DTO)
 
-def insert_new_saying(saying: Saying, user_id: int):
-    handle_db(action="insert_new_saying",saying=saying, user_id=user_id)
+def insert_new_saying(saying: Saying, session: User):
+    handle_db(action=DBAction.INSERT_SAYING,saying=saying, session=session)
 
 def get_saying_by_id(saying_id:int):
     saying_DTO = handle_db("select_by_id", saying_id=saying_id)

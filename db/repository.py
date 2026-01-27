@@ -14,8 +14,8 @@ def handle_db(
     conn = sqlite3.connect("ballestero_sayings.db")
     cursor = conn.cursor()
 
-    if action == DBAction.INSERT_SAYING.value:
-        cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, session.user_id))
+    if action == DBAction.INSERT_SAYING:
+        cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, session.user_id ))
 
     elif action == DBAction.SELECT_SAYINGS:
         rows = cursor.execute(select_all_sayings_sql, (session.page_limit, session.offset,))
