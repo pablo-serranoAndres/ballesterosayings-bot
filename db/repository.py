@@ -18,8 +18,7 @@ def handle_db(
         cursor.execute(insert_new_saying_sql,(saying.title, saying.description, saying.author, session.user_id))
 
     elif action == DBAction.SELECT_SAYINGS:
-        print(session.offset)
-        rows = cursor.execute(select_all_sayings_sql, (10, 0,))
+        rows = cursor.execute(select_all_sayings_sql, (session.page_limit, session.offset,))
         sayings = rows.fetchall()
         return sayings
     

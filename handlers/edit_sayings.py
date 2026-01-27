@@ -1,11 +1,19 @@
 from telebot import TeleBot
 from db.service import get_saying_by_id
+from models.user import User
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
 from ui.menu_options import go_home_indicator, saying_item_edit
 from utils.bot_message import bot_message
+from utils.sessions import SESSIONS
 
 saying_to_update = {}
+
+def handle_cb_update_saying(session: User, bot:TeleBot, chat_id:int) : 
+    
+    bot_message(bot, chat_id, session.user_id, session.menu_status,None, None)
+    SESSIONS[session.user_id].menu_status = FormStatus.WAITING_ID_UPDATE
+
 
 def handle_update_saying(status:FormStatus, bot:TeleBot, chat_id:int, user_id:int,message_text:str = None) :
     if (status == FormStatus.ASK_ID_UPDATE):

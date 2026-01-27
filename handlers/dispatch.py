@@ -1,0 +1,48 @@
+from telebot import TeleBot
+from handlers.configurate_bot import handle_cb_lang_config_button, handle_cb_show_config
+from handlers.delete_sayings import handle_cb_confirm_delete, handle_cb_delete_saying, handle_cb_keep_saying
+from handlers.edit_sayings import handle_cb_update_saying
+from handlers.new_sayings import handle_cb_new_saying
+from handlers.pagination import handle_cb_go_home, handle_cb_go_next, handle_cb_go_previous
+from handlers.select_sayings import handle_cb_watch_all_sayings
+from models.user import User
+from ui.enums.app_action import AppAction
+from ui.enums.form_status import FormStatus
+
+
+CALLBACK_DISPATCH = {
+    AppAction.INSERT_NEW_SAYING.value: handle_cb_new_saying,
+    AppAction.UPDATE_SAYING.value: handle_cb_update_saying,
+    AppAction.WATCH_ALL_SAYINGS.value: handle_cb_watch_all_sayings,
+    #AppAction.WATCHING_SAYINGS.value: "",
+    AppAction.CONFIG.value: handle_cb_show_config,
+    
+    AppAction.LANG_CONFIG_BUTTON.value: handle_cb_lang_config_button,
+    
+    AppAction.DELETE_SAYING.value: handle_cb_delete_saying,
+    #AppAction.ASK_ID_DELETE.value: "",
+    AppAction.CONFIRM_DELETE.value: handle_cb_confirm_delete,
+    AppAction.KEEP_SAYING.value: handle_cb_keep_saying,
+    
+    AppAction.HOME_PAGE.value: handle_cb_go_home,
+    AppAction.NEXT_PAGE.value: handle_cb_go_next,
+    AppAction.PREVIOUS_PAGE.value: handle_cb_go_previous
+
+}
+
+MESSAGE_DISPATCH = {
+    FormStatus
+}
+
+def dispatch_callback(call, bot:TeleBot, session: User): 
+    handler = CALLBACK_DISPATCH.get(call.data)
+    chat_id = call.message.chat.id
+
+    if handler:
+        handler(session, bot, chat_id)
+
+def dispatch_message(call, bot, session: User): 
+    handler = MESSAGE_DISPATCH.get(call.data)
+    if handler:
+        handler()
+        
