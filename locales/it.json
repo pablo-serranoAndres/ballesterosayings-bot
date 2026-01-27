@@ -1,0 +1,113 @@
+{
+  "introduction": "*Benvenuto/a al bot dei detti di Andres-Ballestero!*\n\nCon questo bot puoi gestire i detti della famiglia Andrés Ballestero.\n\n*Scegli un'opzione:*",
+  "new_action": "*Puoi continuare a gestire i contenuti selezionando qualsiasi opzione.*\n\n*Seleziona un'opzione*",
+
+  "menu": {
+    "new_saying": "Nuovo detto",
+    "select_all_sayings": "Vedi detti",
+    "delete_saying": "Elimina detto",
+    "update_saying": "Modifica detto",
+    "configuration": "Configurazione",
+    "help": "Aiuto",
+    "next_page": "Pagina successiva",
+    "previous_page": "Pagina precedente",
+    "home": "Torna alla home",
+    "pick_one": "Seleziona un'opzione",
+    "pagination_options": "*Opzioni di impaginazione*: Puoi caricare i detti in base a quanto è impostata la variabile `limit` nella configurazione.",
+    "configuration_options": "*Opzioni di configurazione*\n\nDa qui puoi modificare diversi parametri dell'applicazione.",
+    "lang_config": "Cambia lingua",
+    "limit_config": "Modifica limite",
+    "lang_config_help": "*Cambia lingua*: Con questa opzione puoi scegliere tra le diverse lingue in cui è configurata l'applicazione.",
+    "limit_config_help": "*Modifica limite*: Regolando la variabile `limit` puoi modificare la quantità di detti che ti vengono mostrati quando vedi tutti i detti."
+  },
+
+  "feedback": {
+    "warning_title": "Titolo mancante",
+    "warning_description": "Descrizione mancante",
+    "warning_author": "Autore mancante",
+    "error": "Si è verificato un errore imprevisto",
+    "select_sayings": "💡 *Aiuto*\nL'icona ❗ indica che il detto richiede modifiche per mancanza di qualche elemento.",
+    "save_saying": "*Detto salvato!*\nPuoi continuare a gestire i contenuti del libro.\n\n*Seleziona un'opzione*",
+    "no_data_found": "Attenzione!\nNon sono stati trovati record corrispondenti alla tua ricerca."
+  },
+
+  "saying": {
+    "type": "Detto",
+    "id": "ID",
+    "title": "Titolo",
+    "description": "Descrizione",
+    "author": "Autore"
+  },
+
+  "forms": {
+    "new_saying": {
+      "new_title": "*Nuovo detto*\n\nInserisci il *titolo* del nuovo detto",
+      "new_description": "*Nuovo detto*\n\nScrivi la *descrizione* del nuovo detto",
+      "new_author": "*Nuovo detto*\n\nScrivi l'*autore* del nuovo detto"
+    },
+
+    "delete": {
+      "ask_saying_id": "*Eliminazione di un detto*\n\nInserisci l'*ID* del detto che desideri eliminare",
+      "delete_confirmation": "Conferma l'eliminazione di\n",
+      "keep_saying": "Mantieni",
+      "delete_saying": "Elimina",
+      "no_confirm_delete": "*Eliminazione del detto annullata.* \n\nPuoi continuare a gestire i contenuti del libro.*Seleziona un'opzione*",
+      "confirm_delete": "*Detto eliminato!*\n\nPuoi continuare a gestire i contenuti del libro.\n\n*Seleziona un'opzione*"
+    },
+
+    "edit": {
+      "ask_saying_id": "*Modifica di un detto*\n\nInserisci l'*ID* del detto che desideri modificare",
+      "title": "Titolo",
+      "description": "Descrizione",
+      "author": "Autore",
+      "pick_option": "Seleziona il campo che desideri modificare:",
+      "edit_confirmation": "Vuoi modificare il seguente detto?"
+    },
+    "config": {
+      "lang": {
+        "title": "*Lingue disponibili*:"
+      }
+    }
+  },
+
+  "lang_config": {
+    "es": "Spagnolo",
+    "en": "Inglese",
+    "it": "Italiano",
+    "de": "Tedesco",
+    "pt": "Portoghese",
+    "fr": "Francese",
+    "cn": "Cinese"
+  },
+
+  "icons": {
+    "hello": "👋 ",
+    "title": "📜",
+    "description": "💬",
+    "author": "👤",
+    "new_saying": "✍️",
+    "select_all_sayings": "📜",
+    "delete": "🔴",
+    "update": "🔧",
+    "configuration": "⚙️",
+    "help": "💡",
+    "attention": "⚠️",
+    "danger": "❗",
+    "success": "✅",
+    "pin": "📌",
+    "home": "🏠",
+    "next": "⏭️",
+    "previous": "⏮️",
+    "switch": "🔁",
+    "limit": "✋",
+    "lang_flags": {
+      "es": "🇪🇸",
+      "en": "🇬🇧",
+      "it": "🇮🇹",
+      "de": "🇩🇪",
+      "pt": "🇵🇹",
+      "fr": "🇫🇷",
+      "cn": "🇨🇳"
+    }
+  }
+}

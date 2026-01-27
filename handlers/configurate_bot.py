@@ -13,17 +13,19 @@ def handle_cb_switch_lang(session: User, bot: TeleBot, call):
     new_lang = call.data.split("_")[order]
     chat_id = call.message.chat.id
 
-    switch_locale(session.user_id, new_lang) 
+    print(new_lang)
+
+    switch_locale(session, new_lang) 
     bot_message(bot, chat_id, session.user_id, AppAction.BACK_HOME, general_menu(session.user_id), None)
     
 
 def handle_cb_show_config(session:User, bot:TeleBot, chat_id: int):
-    SESSIONS[session.user_id].menu_status = AppAction.CONFIG
+    session.menu_status = AppAction.CONFIG
     bot_message(bot, chat_id, session.user_id,  AppAction.CONFIG_MENU,config_menu(session.user_id), None)
 
 
 def handle_cb_lang_config_button(session:User, bot:TeleBot, chat_id: int):
-    SESSIONS[session.user_id].menu_status = FormStatus.HANDLE_LANGS
+    session.menu_status = FormStatus.HANDLE_LANGS
     bot_message(bot, chat_id, session.user_id, SESSIONS[session.user_id].menu_status, available_langs(session.user_id))
 
 def create_session(message):

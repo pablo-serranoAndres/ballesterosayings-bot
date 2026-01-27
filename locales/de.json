@@ -1,0 +1,113 @@
+{
+  "introduction": "*Willkommen beim Andres-Ballestero-Sprüche-Bot!*\n\nMit diesem Bot können Sie die Sprüche der Familie Andrés Ballestero verwalten.\n\n*Wählen Sie eine Option:*",
+  "new_action": "*Sie können die Inhaltsverwaltung fortsetzen, indem Sie eine beliebige Option auswählen.*\n\n*Wählen Sie eine Option*",
+
+  "menu": {
+    "new_saying": "Neuer Spruch",
+    "select_all_sayings": "Sprüche anzeigen",
+    "delete_saying": "Spruch löschen",
+    "update_saying": "Spruch bearbeiten",
+    "configuration": "Einstellungen",
+    "help": "Hilfe",
+    "next_page": "Nächste Seite",
+    "previous_page": "Vorherige Seite",
+    "home": "Zurück zum Start",
+    "pick_one": "Wählen Sie eine Option",
+    "pagination_options": "*Seitennummerierungsoptionen*: Sie können Sprüche basierend auf dem in der Konfiguration festgelegten Wert der Variable `limit` laden.",
+    "configuration_options": "*Konfigurationsoptionen*\n\nHier können Sie verschiedene Anwendungsparameter ändern.",
+    "lang_config": "Sprache ändern",
+    "limit_config": "Limit ändern",
+    "lang_config_help": "*Sprache ändern*: Mit dieser Option können Sie zwischen den verschiedenen konfigurierten Sprachen der Anwendung wählen.",
+    "limit_config_help": "*Limit ändern*: Durch Anpassen der Variable `limit` können Sie die Anzahl der angezeigten Sprüche beim Anzeigen aller Sprüche ändern."
+  },
+
+  "feedback": {
+    "warning_title": "Titel fehlt",
+    "warning_description": "Beschreibung fehlt",
+    "warning_author": "Autor fehlt",
+    "error": "Ein unerwarteter Fehler ist aufgetreten",
+    "select_sayings": "💡 *Hilfe*\nDas ❗-Symbol zeigt an, dass der Spruch aufgrund eines fehlenden Elements bearbeitet werden muss.",
+    "save_saying": "*Spruch gespeichert!*\nSie können die Verwaltung der Buchinhalte fortsetzen.\n\n*Wählen Sie eine Option*",
+    "no_data_found": "Achtung!\nEs wurden keine Datensätze gefunden, die Ihrer Suche entsprechen."
+  },
+
+  "saying": {
+    "type": "Spruch",
+    "id": "ID",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "author": "Autor"
+  },
+
+  "forms": {
+    "new_saying": {
+      "new_title": "*Neuer Spruch*\n\nGeben Sie den *Titel* des neuen Spruchs ein",
+      "new_description": "*Neuer Spruch*\n\nSchreiben Sie die *Beschreibung* des neuen Spruchs",
+      "new_author": "*Neuer Spruch*\n\nSchreiben Sie den *Autor* des neuen Spruchs"
+    },
+
+    "delete": {
+      "ask_saying_id": "*Löschen eines Spruchs*\n\nGeben Sie die *ID* des Spruchs ein, den Sie löschen möchten",
+      "delete_confirmation": "Löschen bestätigen von\n",
+      "keep_saying": "Behalten",
+      "delete_saying": "Löschen",
+      "no_confirm_delete": "*Löschen des Spruchs abgebrochen.* \n\nSie können die Verwaltung der Buchinhalte fortsetzen.*Wählen Sie eine Option*",
+      "confirm_delete": "*Spruch gelöscht!*\n\nSie können die Verwaltung der Buchinhalte fortsetzen.\n\n*Wählen Sie eine Option*"
+    },
+
+    "edit": {
+      "ask_saying_id": "*Bearbeiten eines Spruchs*\n\nGeben Sie die *ID* des Spruchs ein, den Sie bearbeiten möchten",
+      "title": "Titel",
+      "description": "Beschreibung",
+      "author": "Autor",
+      "pick_option": "Wählen Sie das Feld aus, das Sie bearbeiten möchten:",
+      "edit_confirmation": "Möchten Sie den folgenden Spruch bearbeiten?"
+    },
+    "config": {
+      "lang": {
+        "title": "*Verfügbare Sprachen*:"
+      }
+    }
+  },
+
+  "lang_config": {
+    "es": "Spanisch",
+    "en": "Englisch",
+    "it": "Italienisch",
+    "de": "Deutsch",
+    "pt": "Portugiesisch",
+    "fr": "Französisch",
+    "cn": "Chinesisch"
+  },
+
+  "icons": {
+    "hello": "👋 ",
+    "title": "📜",
+    "description": "💬",
+    "author": "👤",
+    "new_saying": "✍️",
+    "select_all_sayings": "📜",
+    "delete": "🔴",
+    "update": "🔧",
+    "configuration": "⚙️",
+    "help": "💡",
+    "attention": "⚠️",
+    "danger": "❗",
+    "success": "✅",
+    "pin": "📌",
+    "home": "🏠",
+    "next": "⏭️",
+    "previous": "⏮️",
+    "switch": "🔁",
+    "limit": "✋",
+    "lang_flags": {
+      "es": "🇪🇸",
+      "en": "🇬🇧",
+      "it": "🇮🇹",
+      "de": "🇩🇪",
+      "pt": "🇵🇹",
+      "fr": "🇫🇷",
+      "cn": "🇨🇳"
+    }
+  }
+}

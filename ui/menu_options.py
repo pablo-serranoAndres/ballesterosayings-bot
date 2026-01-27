@@ -75,6 +75,8 @@ def available_langs(user_id:int):
                 callback_data=f'btn_switch_lang_to_{lang}'
             )
         )
+    btn_home = types.InlineKeyboardButton(get_message(user_id, AppAction.HOME_PAGE), callback_data=AppAction.HOME_PAGE.value)
+    markup.add(btn_home)
 
     return markup
         

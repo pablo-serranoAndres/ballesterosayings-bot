@@ -9,7 +9,7 @@ from db.config import check_versions_db
 from db.service import insert_new_user
 from handlers.configurate_bot import create_session, handle_cb_switch_lang
 from handlers.delete_sayings import handle_delete_saying
-from handlers.dispatch import dispatch_callback
+from handlers.dispatch import dispatch_callback, dispatch_message
 from handlers.edit_sayings import handle_update_saying
 from handlers.new_sayings import handle_cb_new_saying
 from ui.enums.app_action import AppAction
@@ -25,10 +25,6 @@ check_versions_db()
 
 TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
-
-menu_status = {}
-offset = {}
-
 
 @bot.message_handler(commands=['start'])
 def initialize_bot(message):
@@ -48,6 +44,8 @@ def onText(message):
     session = SESSIONS[message.from_user.id]
     chat_id = message.chat.id
     message_text = message.text
+
+    #dispatch_message()
 
     if session.menu_status in (
         
@@ -76,6 +74,7 @@ def callback_query(call):
         SESSIONS[user_id] = session
 
     if call.data.startswith("btn_switch_lang_to"):
+        print("cambiar idioma")
         handle_cb_switch_lang(session, bot, call)
         
     else: 

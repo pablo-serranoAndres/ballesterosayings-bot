@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from typing import List
 from db.service import update_lang
+from models.user import User
 from utils.sessions import SESSIONS
 
 LOCALE = {}
@@ -18,11 +19,11 @@ def open_locale(user_id:int) :
     with open(file_path, "r", encoding="utf-8") as file:
         LOCALE[user_lang] = json.load(file)
 
-def switch_locale(user_id: int, new_lang: str):
-    SESSIONS[user_id].lang = new_lang
-    update_lang(user_id, new_lang)
+def switch_locale(session: User, new_lang: str):
+    session.lang = new_lang
+    update_lang(session)
     
-    open_locale(user_id)
+    open_locale(session.user_id)
 
 
 def get_available_langs():

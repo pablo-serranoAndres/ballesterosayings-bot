@@ -11,7 +11,7 @@ saying_to_update = {}
 
 def handle_cb_update_saying(session: User, bot:TeleBot, chat_id:int) : 
     
-    bot_message(bot, chat_id, session.user_id, session.menu_status,None, None)
+    bot_message(bot, chat_id, session.user_id, FormStatus.ASK_ID_UPDATE, go_home_indicator(session.user_id), None)
     SESSIONS[session.user_id].menu_status = FormStatus.WAITING_ID_UPDATE
 
 

@@ -13,9 +13,10 @@ new_saying = {}
 
 def handle_cb_new_saying(session: User, bot:TeleBot, chat_id:int ):
     new_saying[session.user_id] = Saying("","","","")
-    bot_message(bot, chat_id, session.user_id, session.form_status, go_home_indicator(session.user_id))
+    
+    bot_message(bot, chat_id, session.user_id, FormStatus.NEW_SAYING, go_home_indicator(session.user_id))
 
-    SESSIONS[session.user_id].menu_status = FormStatus.WAITING_TITLE
+    session.menu_status = FormStatus.WAITING_TITLE
     
 
 def handle_mss_new_saying(form_status:FormStatus, session: User, user_id:int, bot:TeleBot, chat_id:int, message_text:str = None):

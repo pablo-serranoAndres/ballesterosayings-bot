@@ -1,82 +1,83 @@
 {
-  "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
-  "new_action": "*Puede continuar gestionando los contenidos seleccionando cualquier opción.*\n\n*Seleccione una opción*",
+  "introduction": "*Bienvenue sur le bot des citations d'Andres-Ballestero !*\n\nAvec ce bot, vous pouvez gérer les citations de la famille Andrés Ballestero.\n\n*Choisissez une option :*",
+  "new_action": "*Vous pouvez continuer à gérer le contenu en sélectionnant n'importe quelle option.*\n\n*Sélectionnez une option*",
 
   "menu": {
-    "new_saying": "Nuevo dicho",
-    "select_all_sayings": "Ver dichos",
-    "delete_saying": "Borrar dicho",
-    "update_saying": "Editar dicho",
-    "configuration": "Configuración",
-    "help": "Ayuda",
-    "next_page": "Página siguiente",
-    "previous_page": "Página anterior",
-    "home": "Volver a inicio",
-    "pick_one": "Seleccione una opción",
-    "pagination_options": "*Opciones de paginación*: Puede cargar los dichos en función de lo que haya configurado la variable `limit` en la configuración.",
-    "configuration_options": "*Opciones de configuración*\n\nDesde aquí puede modificar diferentes parámetros de la aplicación.",
-    "lang_config": "Cambiar el idioma",
-    "limit_config": "Modificar límite",
-    "lang_config_help": "*Cambiar el idioma*: Con esta opción podrás elegir entre los diferentes idiomas en los que está configurada la aplicación.",
-    "limit_config_help": "*Modificar límite*: Ajustando la variable `limit` podrá modificar la cantidad de dichos que se le muestran al ver todos los dichos."
+    "new_saying": "Nouvelle citation",
+    "select_all_sayings": "Voir les citations",
+    "delete_saying": "Supprimer une citation",
+    "update_saying": "Modifier une citation",
+    "configuration": "Configuration",
+    "help": "Aide",
+    "next_page": "Page suivante",
+    "previous_page": "Page précédente",
+    "home": "Retour à l'accueil",
+    "pick_one": "Sélectionnez une option",
+    "pagination_options": "*Options de pagination* : Vous pouvez charger les citations en fonction de la valeur de la variable `limit` définie dans la configuration.",
+    "configuration_options": "*Options de configuration*\n\nVous pouvez modifier différents paramètres de l'application depuis ici.",
+    "lang_config": "Changer la langue",
+    "limit_config": "Modifier la limite",
+    "lang_config_help": "*Changer la langue* : Avec cette option, vous pouvez choisir parmi les différentes langues configurées dans l'application.",
+    "limit_config_help": "*Modifier la limite* : En ajustant la variable `limit`, vous pouvez modifier le nombre de citations affichées lors de la consultation de toutes les citations."
   },
 
   "feedback": {
-    "warning_title": "Falta título",
-    "warning_description": "Falta descripción",
-    "warning_author": "Falta autor",
-    "error": "Ha ocurrido un error inesperado",
-    "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
-    "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
-    "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."
+    "warning_title": "Titre manquant",
+    "warning_description": "Description manquante",
+    "warning_author": "Auteur manquant",
+    "error": "Une erreur inattendue s'est produite",
+    "select_sayings": "💡 *Aide*\nL'icône ❗ indique que la citation nécessite une édition en raison d'un élément manquant.",
+    "save_saying": "*Citation enregistrée !*\nVous pouvez continuer à gérer le contenu du livre.\n\n*Sélectionnez une option*",
+    "no_data_found": "Attention !\nAucun enregistrement correspondant à votre recherche n'a été trouvé."
   },
 
   "saying": {
-    "type": "Dicho",
+    "type": "Citation",
     "id": "ID",
-    "title": "Título",
-    "description": "Descripción",
-    "author": "Autor"
+    "title": "Titre",
+    "description": "Description",
+    "author": "Auteur"
   },
 
   "forms": {
     "new_saying": {
-      "new_title": "*Nuevo dicho*\n\nIntroduce el *título* del nuevo dicho",
-      "new_description": "*Nuevo dicho*\n\nEscribe la *descripción* del nuevo dicho",
-      "new_author": "*Nuevo dicho*\n\nEscribe *autor* del nuevo dicho"
+      "new_title": "*Nouvelle citation*\n\nEntrez le *titre* de la nouvelle citation",
+      "new_description": "*Nouvelle citation*\n\nRédigez la *description* de la nouvelle citation",
+      "new_author": "*Nouvelle citation*\n\nIndiquez l'*auteur* de la nouvelle citation"
     },
 
     "delete": {
-      "ask_saying_id": "*Eliminación de un dicho*\n\nIntroduce el *ID* del dicho que desees eliminar",
-      "delete_confirmation": "Confirmar la eliminación de\n",
-      "keep_saying": "Mantener",
-      "delete_saying": "Eliminar",
-      "no_confirm_delete": "*Abortada la eliminación del dicho.* \n\nPuedes continuar gestionando los contenidos del libro.*Seleccione una opción*",
-      "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro.\n\n*Seleccione una opción*"
+      "ask_saying_id": "*Suppression d'une citation*\n\nEntrez l'*ID* de la citation que vous souhaitez supprimer",
+      "delete_confirmation": "Confirmer la suppression de\n",
+      "keep_saying": "Conserver",
+      "delete_saying": "Supprimer",
+      "no_confirm_delete": "*Suppression de la citation annulée.* \n\nVous pouvez continuer à gérer le contenu du livre.*Sélectionnez une option*",
+      "confirm_delete": "*Citation supprimée !*\n\nVous pouvez continuer à gérer le contenu du livre.\n\n*Sélectionnez une option*"
     },
 
     "edit": {
-      "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
-      "title": "Título",
-      "description": "Descripción",
-      "author": "Autor",
-      "pick_option": "Seleccione el campo que desee editar:",
-      "edit_confirmation": "¿Desea editar el siguiente dicho?"
+      "ask_saying_id": "*Modification d'une citation*\n\nEntrez l'*ID* de la citation que vous souhaitez modifier",
+      "title": "Titre",
+      "description": "Description",
+      "author": "Auteur",
+      "pick_option": "Sélectionnez le champ que vous souhaitez modifier :",
+      "edit_confirmation": "Souhaitez-vous modifier la citation suivante ?"
     },
     "config": {
       "lang": {
-        "title": "*Idiomas disponibles*:"
+        "title": "*Langues disponibles* :"
       }
     }
   },
 
   "lang_config": {
-    "es": "Español",
-    "en": "Inglés",
-    "it": "Italiano",
-    "de": "Alemán",
-    "pt": "Portugués",
-    "fr": "Francés"
+    "es": "Espagnol",
+    "en": "Anglais",
+    "it": "Italien",
+    "de": "Allemand",
+    "pt": "Portugais",
+    "fr": "Français",
+    "cn": "Chinois"
   },
 
   "icons": {
@@ -105,7 +106,8 @@
       "it": "🇮🇹",
       "de": "🇩🇪",
       "pt": "🇵🇹",
-      "fr": "🇫🇷"
+      "fr": "🇫🇷",
+      "cn": "🇨🇳"
     }
   }
 }

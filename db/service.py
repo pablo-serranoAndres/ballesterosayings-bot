@@ -60,8 +60,8 @@ def delete_saying_by_id (saying_id):
 # def insert_lang (user_id: int, new_lang:str):
 #     handle_db(action=DBAction.INSERT_NEW_LANG, user_id=user_id, new_lang=new_lang)
 
-def update_lang (user: User):
-    handle_db(action=DBAction.UPDATE_LANG_CONFIG, user=user,)
+def update_lang (session: User):
+    handle_db(action=DBAction.UPDATE_LANG_CONFIG, session=session,)
 
 def insert_new_user (session: User):
     handle_db(action=DBAction.INSERT_USER, session=session, )

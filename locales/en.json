@@ -1,82 +1,83 @@
 {
-  "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
-  "new_action": "*Puede continuar gestionando los contenidos seleccionando cualquier opción.*\n\n*Seleccione una opción*",
+  "introduction": "*Welcome to the Andres-Ballestero sayings bot!*\n\nWith this bot you can manage the sayings of the Andrés Ballestero family.\n\n*Choose an option:*",
+  "new_action": "*You can continue managing content by selecting any option.*\n\n*Select an option*",
 
   "menu": {
-    "new_saying": "Nuevo dicho",
-    "select_all_sayings": "Ver dichos",
-    "delete_saying": "Borrar dicho",
-    "update_saying": "Editar dicho",
-    "configuration": "Configuración",
-    "help": "Ayuda",
-    "next_page": "Página siguiente",
-    "previous_page": "Página anterior",
-    "home": "Volver a inicio",
-    "pick_one": "Seleccione una opción",
-    "pagination_options": "*Opciones de paginación*: Puede cargar los dichos en función de lo que haya configurado la variable `limit` en la configuración.",
-    "configuration_options": "*Opciones de configuración*\n\nDesde aquí puede modificar diferentes parámetros de la aplicación.",
-    "lang_config": "Cambiar el idioma",
-    "limit_config": "Modificar límite",
-    "lang_config_help": "*Cambiar el idioma*: Con esta opción podrás elegir entre los diferentes idiomas en los que está configurada la aplicación.",
-    "limit_config_help": "*Modificar límite*: Ajustando la variable `limit` podrá modificar la cantidad de dichos que se le muestran al ver todos los dichos."
+    "new_saying": "New saying",
+    "select_all_sayings": "View sayings",
+    "delete_saying": "Delete saying",
+    "update_saying": "Edit saying",
+    "configuration": "Configuration",
+    "help": "Help",
+    "next_page": "Next page",
+    "previous_page": "Previous page",
+    "home": "Back to home",
+    "pick_one": "Select an option",
+    "pagination_options": "*Pagination options*: You can load sayings based on what the `limit` variable is set to in the configuration.",
+    "configuration_options": "*Configuration options*\n\nFrom here you can modify different application parameters.",
+    "lang_config": "Change language",
+    "limit_config": "Modify limit",
+    "lang_config_help": "*Change language*: With this option you can choose between the different languages the application is configured in.",
+    "limit_config_help": "*Modify limit*: By adjusting the `limit` variable you can change the number of sayings displayed when viewing all sayings."
   },
 
   "feedback": {
-    "warning_title": "Falta título",
-    "warning_description": "Falta descripción",
-    "warning_author": "Falta autor",
-    "error": "Ha ocurrido un error inesperado",
-    "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
-    "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
-    "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."
+    "warning_title": "Missing title",
+    "warning_description": "Missing description",
+    "warning_author": "Missing author",
+    "error": "An unexpected error has occurred",
+    "select_sayings": "💡 *Help*\nThe ❗ icon indicates the saying requires editing due to a missing element.",
+    "save_saying": "*Saying saved!*\nYou can continue managing the contents of the book\n\n.*Select an option*",
+    "no_data_found": "Attention!\nNo records matching your search were found."
   },
 
   "saying": {
-    "type": "Dicho",
+    "type": "Saying",
     "id": "ID",
-    "title": "Título",
-    "description": "Descripción",
-    "author": "Autor"
+    "title": "Title",
+    "description": "Description",
+    "author": "Author"
   },
 
   "forms": {
     "new_saying": {
-      "new_title": "*Nuevo dicho*\n\nIntroduce el *título* del nuevo dicho",
-      "new_description": "*Nuevo dicho*\n\nEscribe la *descripción* del nuevo dicho",
-      "new_author": "*Nuevo dicho*\n\nEscribe *autor* del nuevo dicho"
+      "new_title": "*New saying*\n\nEnter the *title* of the new saying",
+      "new_description": "*New saying*\n\nWrite the *description* of the new saying",
+      "new_author": "*New saying*\n\nWrite the *author* of the new saying"
     },
 
     "delete": {
-      "ask_saying_id": "*Eliminación de un dicho*\n\nIntroduce el *ID* del dicho que desees eliminar",
-      "delete_confirmation": "Confirmar la eliminación de\n",
-      "keep_saying": "Mantener",
-      "delete_saying": "Eliminar",
-      "no_confirm_delete": "*Abortada la eliminación del dicho.* \n\nPuedes continuar gestionando los contenidos del libro.*Seleccione una opción*",
-      "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro.\n\n*Seleccione una opción*"
+      "ask_saying_id": "*Delete a saying*\n\nEnter the *ID* of the saying you wish to delete",
+      "delete_confirmation": "Confirm deletion of\n",
+      "keep_saying": "Keep",
+      "delete_saying": "Delete",
+      "no_confirm_delete": "*Saying deletion aborted.* \n\nYou can continue managing the contents of the book.*Select an option*",
+      "confirm_delete": "*Saying deleted!*\n\nYou can continue managing the contents of the book.\n\n*Select an option*"
     },
 
     "edit": {
-      "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
-      "title": "Título",
-      "description": "Descripción",
-      "author": "Autor",
-      "pick_option": "Seleccione el campo que desee editar:",
-      "edit_confirmation": "¿Desea editar el siguiente dicho?"
+      "ask_saying_id": "*Edit a saying*\n\nEnter the *ID* of the saying you wish to edit",
+      "title": "Title",
+      "description": "Description",
+      "author": "Author",
+      "pick_option": "Select the field you wish to edit:",
+      "edit_confirmation": "Do you want to edit the following saying?"
     },
     "config": {
       "lang": {
-        "title": "*Idiomas disponibles*:"
+        "title": "*Available languages*:"
       }
     }
   },
 
   "lang_config": {
-    "es": "Español",
-    "en": "Inglés",
-    "it": "Italiano",
-    "de": "Alemán",
-    "pt": "Portugués",
-    "fr": "Francés"
+    "es": "Spanish",
+    "en": "English",
+    "it": "Italian",
+    "de": "German",
+    "pt": "Portuguese",
+    "fr": "French",
+    "cn": "Chinese"
   },
 
   "icons": {
@@ -105,7 +106,8 @@
       "it": "🇮🇹",
       "de": "🇩🇪",
       "pt": "🇵🇹",
-      "fr": "🇫🇷"
+      "fr": "🇫🇷",
+      "cn": "🇨🇳"
     }
   }
 }
