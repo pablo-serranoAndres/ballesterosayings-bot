@@ -5,7 +5,6 @@ from models.user import User
 from ui.enums.app_action import AppAction
 from ui.menu_options import general_menu
 from utils.bot_message import bot_message
-from utils.sessions import SESSIONS
 
 
 def handle_cb_go_home(session:User, bot:TeleBot, chat_id:int, aditional_params:str):

@@ -43,9 +43,10 @@ class AppAction(Enum):
     WATCHING_SAYINGS = "watching_sayings"
     EDITING_SAYING = "editing saying"
     LANG_SWITCH = "btn_switch_lang_to"
+    NOT_PERMITED = "not_permitted"
 
-
-    
-    
-
-
+    ACEPT_USER = "btn_acept_user"
+    REJECT_USER = "btn_reject_user"
+    WAITING_AUTH_USER = "waiting_auth"
+    NEW_USER_ACEPTED = "new_user_acepted"
+    NEW_USER_REJECTED = "new_user_rejected"

@@ -49,6 +49,9 @@ def delete_saying_by_id (saying_id):
 def update_lang (session: User):
     handle_db(action=DBAction.UPDATE_LANG_CONFIG, session=session,)
 
+def update_autorized (session: User):
+    handle_db(action=DBAction.UPDATE_AUTORIZED, session=session,)
+
 def insert_new_user (session: User):
     handle_db(action=DBAction.INSERT_USER, session=session, )
 

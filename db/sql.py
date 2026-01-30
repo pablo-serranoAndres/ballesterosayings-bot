@@ -30,7 +30,8 @@ create_users_table_sql = '''
                menu_status TEXT,
                offset INTEGER DEFAULT 0, 
                page_limit INTEGER DEFAULT 10,
-               lang TEXT DEFAULT 'es'
+               lang TEXT DEFAULT 'es',
+               autorized BOOLEAN DEFAULT FALSE
                )
             '''
 create_sayings_table_sql = '''
@@ -57,7 +58,11 @@ update_lang_config_sql = '''
             SET lang = ?
             WHERE user_id = ?
             '''
-
+update_autorized_sql = '''
+            UPDATE users
+            SET autorized = ?
+            WHERE user_id = ?
+            '''
 # SAYINGS SENTENCES
 insert_new_saying_sql = '''
             INSERT OR IGNORE INTO sayings (title, description, author, user_id)

@@ -16,5 +16,6 @@ class DBAction(Enum):
     INSERT_NEW_LANG = "insert_lang"
 
     INSERT_USER = "insert_user"
+    UPDATE_AUTORIZED = "update_autorized"
     GET_USER_BY_ID = "get_user"
     

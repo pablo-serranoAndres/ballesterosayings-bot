@@ -1,5 +1,6 @@
 
 from models.saying import Saying
+from models.user import User
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
 from ui.enums.help_feedback import HelpFeedback
@@ -128,17 +129,34 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
             return f'{LOCALE[user_lang]["new_action"]}'
         
         elif (status == AppAction.APP_ERROR) : 
-            return f'{LOCALE[user_lang]["icons"]["attention"]} {LOCALE[user_lang]["feedback"]["app_error"]} {LOCALE[user_lang]["new_action"]}'
+            return f'{LOCALE[user_lang]["icons"]["attention"]} {LOCALE[user_lang]["feedback"]["app_error"]}{LOCALE[user_lang]["new_action"]}'
         
-        
-        
-        
+        elif (status == AppAction.NOT_PERMITED) : 
+            return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["not_permitted"]}{LOCALE[user_lang]["new_action"]}' 
 
-        # elif (status == AppAction.WATCHING_SAYINGS) : 
-        #     return
+        elif (status == AppAction.ACEPT_USER) : 
+            return f'{LOCALE[user_lang]["icons"]["success"]}{LOCALE[user_lang]["admin"]["acept_user"]}'
+        
+        elif (status == AppAction.REJECT_USER) : 
+            return f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["admin"]["reject_user"]}'
+
+        elif (status == AppAction.WAITING_AUTH_USER) : 
+            return f'{LOCALE[user_lang]["icons"]["limit"]}{LOCALE[user_lang]["icons"]["author"]} {LOCALE[user_lang]["feedback"]["waiting_auth"]}'
+        
+        elif (status == AppAction.NEW_USER_ACEPTED) : 
+            return f'{LOCALE[user_lang]["icons"]["success"]}{LOCALE[user_lang]["admin"]["new_user_acepted"]}'
+        
+        elif (status == AppAction.NEW_USER_REJECTED) : 
+            return f'{LOCALE[user_lang]["icons"]["danger"]}{LOCALE[user_lang]["admin"]["new_user_rejected"]}'
         
     else :
         return f'{LOCALE[user_lang]["feedback"]["error"]}'
+
+def build_user_auth(admin_id: int, session:User):
+    user_lang = SESSIONS[admin_id].lang
+
+    return f'{LOCALE[user_lang]["icons"]["pin"]} <b>NUEVO USUARIO</b>\n\n¿Autorizar a <b>{session.username}</b> (<u>{session.user_id}</u>) a usar el bot?'
+
 
 def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
     user_lang = SESSIONS[user_id].lang
@@ -180,7 +198,5 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
 def get_lang_info(user_id: int, lang:str):
     # user_lang = USER_LANG[user_id]
     user_lang = SESSIONS[user_id].lang
-
-
     return f'{LOCALE[user_lang]["icons"]["lang_flags"][lang]} {LOCALE[user_lang]["lang_config"][lang]}'
-    
+

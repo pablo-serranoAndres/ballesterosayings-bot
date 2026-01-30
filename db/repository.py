@@ -9,7 +9,7 @@ from db.sql import *
 
 def handle_db(
         action:DBAction, 
-        saying: Saying = None, 
+        saying: Saying = None,
         saying_id: int = None,
         session:User = None) :
     
@@ -41,7 +41,9 @@ def handle_db(
 
     elif action == DBAction.UPDATE_LANG_CONFIG:
         cursor.execute(update_lang_config_sql, (session.lang.strip(), session.user_id, ))
-    
+
+    elif action == DBAction.UPDATE_AUTORIZED:
+        cursor.execute(update_autorized_sql, (session.autorized, session.user_id, ))    
 
     elif action == DBAction.INSERT_USER:
         cursor.execute(insert_user_sql, (session.user_id, session.username, session.menu_status.value, session.offset, session.page_limit, session.lang))

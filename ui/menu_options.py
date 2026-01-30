@@ -82,4 +82,12 @@ def available_langs(user_id:int):
 
     return markup
         
-    
+def acept_reject_new_users(user_id: int, new_user_id):
+    markup = types.InlineKeyboardMarkup(row_width=2)
+
+    btn_acept_user = types.InlineKeyboardButton(get_message(user_id, AppAction.ACEPT_USER), callback_data=f'{AppAction.ACEPT_USER.value};{new_user_id}')
+    btn_reject_user = types.InlineKeyboardButton(get_message(user_id, AppAction.REJECT_USER), callback_data=f'{AppAction.REJECT_USER.value};{new_user_id}')
+        
+    markup.add(btn_acept_user, btn_reject_user)
+
+    return markup

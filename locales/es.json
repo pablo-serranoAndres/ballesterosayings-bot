@@ -2,6 +2,13 @@
   "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
   "new_action": "Puede continuar gestionando los contenidos seleccionando cualquier opción.\n\n*Seleccione una opción*",
 
+  "admin": {
+    "acept_user": "Aceptar usuario",
+    "reject_user": "Rechazar usuario",
+    "new_user_acepted": "*Nuevo usuario registrado con éxito!*",
+    "new_user_rejected": "*Acceso impedido para este usuario.*"
+  },
+
   "menu": {
     "new_saying": "Nuevo dicho",
     "select_all_sayings": "Ver dichos",
@@ -28,7 +35,9 @@
     "app_error": "*Acción no esperada.* Redirigiendo al menu principal. \n\n",
     "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
     "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
-    "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."
+    "not_permitted": "*¡Acción no permitida!*\n\nRedirigiendo al menu principal.\n\n",
+    "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda.",
+    "waiting_auth": "¡Gracias por querer ayudar a gestionar los dichos de la familia Andres Ballestero!\n\nUn administrador está revisando tu solicitud. Nos pondremos en contacto contigo tan pronto como tengamos novedades. \n\n¡Gracias por tu paciencia!"
   },
 
   "saying": {
