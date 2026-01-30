@@ -22,6 +22,9 @@ def handle_cb_lang_config_button(session:User, bot:TeleBot, chat_id: int, aditio
     session.menu_status = FormStatus.HANDLE_LANGS
     bot_message(bot, chat_id, session.user_id, SESSIONS[session.user_id].menu_status, available_langs(session.user_id))
 
+def handle_cb_limit_config_button(session:User, bot:TeleBot, chat_id: int, aditional_params:str):
+    print("edit limit")
+
 def create_session(message):
     return User (
             user_id=message.from_user.id,

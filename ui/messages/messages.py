@@ -7,8 +7,8 @@ from utils.locale import LOCALE
 from utils.sessions import SESSIONS
 
 def get_message(user_id:int, status: FormStatus | AppAction) -> str :
-    # user_lang = get_lang_config(user_id)
     user_lang = SESSIONS.get(user_id).lang
+    
 
     if isinstance(status, FormStatus) :
         if (status == FormStatus.NEW_SAYING):
@@ -127,6 +127,11 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         elif (status == AppAction.BACK_HOME) : 
             return f'{LOCALE[user_lang]["new_action"]}'
         
+        elif (status == AppAction.APP_ERROR) : 
+            return f'{LOCALE[user_lang]["icons"]["attention"]} {LOCALE[user_lang]["feedback"]["app_error"]} {LOCALE[user_lang]["new_action"]}'
+        
+        
+        
         
 
         # elif (status == AppAction.WATCHING_SAYINGS) : 
@@ -168,7 +173,7 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["pagination_options"]}'
     
     elif (app_location == HelpFeedback.CONGIGURATION_OPTIONS):
-            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}\n{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["limit_config_help"]}'
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}'
     else :
         return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["error"]}'
 

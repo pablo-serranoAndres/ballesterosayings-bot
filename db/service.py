@@ -46,20 +46,6 @@ def get_saying_by_id(saying_id:int):
 def delete_saying_by_id (saying_id): 
     handle_db(action="delete_saying",saying_id=saying_id)
 
-
-# def get_lang_config (user_id: int): 
-#     config_DAW = handle_db(
-#         action=DBAction.GET_LANG_CONFIG,
-#         user_id=user_id)
-    
-#     lang_config = config_DAW.fetchone()[0]
-
-    
-#     return lang_config
-
-# def insert_lang (user_id: int, new_lang:str):
-#     handle_db(action=DBAction.INSERT_NEW_LANG, user_id=user_id, new_lang=new_lang)
-
 def update_lang (session: User):
     handle_db(action=DBAction.UPDATE_LANG_CONFIG, session=session,)
 
@@ -70,6 +56,5 @@ def get_user_by_id (session: User) -> User:
     user = handle_db(action=DBAction.GET_USER_BY_ID, user_id=session.user_id)
     return user
 
-
-
-
+def update_saying_by_id(saying: Saying, session: User):
+     handle_db(action=DBAction.UPDATE_SAYING, saying=saying, session=session)

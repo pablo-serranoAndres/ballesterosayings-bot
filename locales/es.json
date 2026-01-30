@@ -1,6 +1,6 @@
 {
   "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
-  "new_action": "*Puede continuar gestionando los contenidos seleccionando cualquier opción.*\n\n*Seleccione una opción*",
+  "new_action": "Puede continuar gestionando los contenidos seleccionando cualquier opción.\n\n*Seleccione una opción*",
 
   "menu": {
     "new_saying": "Nuevo dicho",
@@ -25,7 +25,7 @@
     "warning_title": "Falta título",
     "warning_description": "Falta descripción",
     "warning_author": "Falta autor",
-    "error": "Ha ocurrido un error inesperado",
+    "app_error": "*Acción no esperada.* Redirigiendo al menu principal. \n\n",
     "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
     "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
     "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda."

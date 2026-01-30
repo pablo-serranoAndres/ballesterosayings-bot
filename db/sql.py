@@ -79,7 +79,11 @@ delete_saying_by_id_sql = '''
             DELETE FROM sayings
             WHERE id = ? 
             '''
-
+update_saying_by_id_sql = '''
+            UPDATE sayings
+            SET title = ?, description = ?, author = ?
+            WHERE id = ?
+            '''
 insert_current_sayings_sql = '''
             INSERT OR IGNORE INTO sayings (id, title, description, author) 
             VALUES

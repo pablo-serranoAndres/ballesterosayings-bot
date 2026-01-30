@@ -1,9 +1,11 @@
+
+
+
 import sqlite3
-from db.sql import *
 from models.saying import Saying
 from models.user import User
 from ui.enums.db_action import DBAction
-
+from db.sql import *
 
 def handle_db(
         action:DBAction, 
@@ -30,22 +32,16 @@ def handle_db(
     elif action == DBAction.DELETE_SAYING.value:
         cursor.execute(delete_saying_by_id_sql,(saying_id,))
 
-    elif action == DBAction.UPDATE_SAYING.value:
-        print("")
+    elif action == DBAction.UPDATE_SAYING:
+        cursor.execute(update_saying_by_id_sql,(saying.title, saying.description, saying.author,saying.id,))
         
     elif action == DBAction.COUNT_SAYINGS.value:
         rows = cursor.execute(count_sayings_sql)
         return rows
-    
-    # elif action == DBAction.GET_LANG_CONFIG:
-    #     rows = cursor.execute(get_lang_config_sql, (user_id,))
-    #     return rows
 
     elif action == DBAction.UPDATE_LANG_CONFIG:
         cursor.execute(update_lang_config_sql, (session.lang.strip(), session.user_id, ))
     
-    # elif action == DBAction.INSERT_NEW_LANG:
-    #     cursor.execute(insert_lang_config_sql, (user_id, new_lang.strip(),))
 
     elif action == DBAction.INSERT_USER:
         cursor.execute(insert_user_sql, (session.user_id, session.username, session.menu_status.value, session.offset, session.page_limit, session.lang))
@@ -54,8 +50,6 @@ def handle_db(
         user = cursor.execute(get_user_by_id_sql, (session.user_id,))
         
         return user.fetchone()
-
-        # return user.fetchall()
 
 
     conn.commit()
