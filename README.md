@@ -39,8 +39,8 @@ cd ballesterosayings-bot
 pip install -r requirements.txt
 ```
 
-3. **Create a Telegram bot**
-[BotFather](https://t.me/BotFather)
+3. **Create a Telegram bot on [BotFather](https://t.me/BotFather)**
+
 ```bash
 Go to BotFather on Telegram.
 Create a new bot and obtain the bot token.
