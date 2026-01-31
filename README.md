@@ -1,16 +1,35 @@
-# Mi primer bot de Telegram con Telebot
+# 🤖 ballesterosayingsbot
 
-Este repositorio contiene el codigo para crear un bot básico de Telegram utilizando la biblioteca Telebot de Python
+A Telegram bot to manage sayings from a book by Aragonese authors.  
+Supports CRUD operations, multilingual filtering, and role-based access control (RBAC).
 
-## Configuración
+## 🛠️ Tecnologías
 
-1. Clona este repositorio.
-2. Instala las dependencias usando `pip install -r requirements.txt`
-3. Crea un bot en Telegram a través de BotFather y obten tu token.
-4. Reemplaza 'TU_TOKEN_AQUI' en `main.py` con tu token.
-5. Ejecuta el bot usando `python main.py`
+- Python 3.10+
+- pyTelegramBotAPI (`telebot`)
 
-## Funcionalidades
+## ⚙️ Installation
 
-- Responde a los comandos `/start` y `/help`
-- Repite cualquier otro mensaje que le envies
+Follow these steps to install and run the bot locally:
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/pablo-serranoAndres/ballesterosayings-bot.git
+cd ballesterosayings-bot
+```
+
+## 🚀 Features
+
+### User actions
+
+- Add a saying
+- Change language
+- Filter sayings by field
+- Edit a saying
+- View sayings
+
+### Admin actions
+
+- Manage users (approve/deny access)
+- Delete sayings
