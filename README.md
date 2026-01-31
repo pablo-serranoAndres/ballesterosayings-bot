@@ -40,9 +40,9 @@ pip install -r requirements.txt
 ```
 
 3. **Create a Telegram bot**
-
+[BotFather](https://t.me/BotFather)
 ```bash
-Go to [BotFather](https://t.me/BotFather) on Telegram.
+Go to BotFather on Telegram.
 Create a new bot and obtain the bot token.
 ```
 
