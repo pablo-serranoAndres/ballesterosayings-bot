@@ -60,7 +60,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
     elif isinstance(status, AppAction):
         
         if (status == AppAction.INTRODUCTION) : 
-            return f'{LOCALE[user_lang]["icons"]["hello"]} {LOCALE[user_lang]["introduction"]}'
+            return f'{LOCALE[user_lang]["icons"]["hello"]}{LOCALE[user_lang]["introduction"]}'
         
     # general_menu()
         elif (status == AppAction.INSERT_NEW_SAYING) :
@@ -78,7 +78,6 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
             return f'{LOCALE[user_lang]["icons"]["configuration"]} {LOCALE[user_lang]["menu"]["configuration"]}'
         
         elif (status == AppAction.CONFIG_MENU) : 
-            f''
             return f'{LOCALE[user_lang]["icons"]["configuration"]} {LOCALE[user_lang]["menu"]["configuration_options"]} \n\n {get_help_message(user_id, HelpFeedback.CONGIGURATION_OPTIONS)}'
     
     # go_home_indicator()
@@ -149,13 +148,31 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         elif (status == AppAction.NEW_USER_REJECTED) : 
             return f'{LOCALE[user_lang]["icons"]["danger"]}{LOCALE[user_lang]["admin"]["new_user_rejected"]}'
         
+        elif (status == AppAction.USER_ADMIN) : 
+            return f'{LOCALE[user_lang]["icons"]["author"]}{LOCALE[user_lang]["menu"]["user_admin"]}'
+        
     else :
-        return f'{LOCALE[user_lang]["feedback"]["error"]}'
+        return f'{LOCALE[user_lang]["feedback"]["app_error"]}'
 
 def build_user_auth(admin_id: int, session:User):
     user_lang = SESSIONS[admin_id].lang
 
     return f'{LOCALE[user_lang]["icons"]["pin"]} <b>NUEVO USUARIO</b>\n\n¿Autorizar a <b>{session.username}</b> (<u>{session.user_id}</u>) a usar el bot?'
+
+
+def build_user_display(admin_id: int,session: User):
+    user_lang = SESSIONS[admin_id].lang
+    lines = []
+    
+    if (session.autorized) :
+        lines.append(f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["admin"]["user"]["acepted"]}')
+    else:
+        lines.append(f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["admin"]["user"]["rejected"]}')
+
+    lines.append(f'{LOCALE[user_lang]["admin"]["user"]["id"]}: *{session.user_id}*')
+    lines.append(f'{LOCALE[user_lang]["admin"]["user"]["username"]}: *{session.username}*')
+   
+    return "\n".join(lines)
 
 
 def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):

@@ -1,5 +1,5 @@
 from telebot import TeleBot
-from handlers.admin import handle_acept_new_user, handle_reject_new_user
+from handlers.admin import handle_new_user, handle_admin_users
 from handlers.configurate_bot import handle_cb_lang_config_button, handle_cb_limit_config_button, handle_cb_show_config, handle_cb_switch_lang
 from handlers.delete_sayings import handle_cb_confirm_delete, handle_cb_delete_saying, handle_cb_keep_saying, handle_mss_delete_saying
 from handlers.edit_sayings import handle_cb_save_update_saying, handle_cb_update_saying, handle_mss_update_saying
@@ -30,8 +30,10 @@ CALLBACK_DISPATCH = {
     AppAction.NEXT_PAGE.value: handle_cb_go_next,
     AppAction.PREVIOUS_PAGE.value: handle_cb_go_previous,
     AppAction.LANG_SWITCH.value: handle_cb_switch_lang,
-    AppAction.ACEPT_USER.value: handle_acept_new_user,
-    AppAction.REJECT_USER.value: handle_reject_new_user
+    AppAction.ACEPT_USER.value: handle_new_user,
+    AppAction.REJECT_USER.value: handle_new_user,
+    AppAction.USER_ADMIN.value: handle_admin_users
+
 
 }
 

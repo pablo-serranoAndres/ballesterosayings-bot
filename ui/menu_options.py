@@ -1,3 +1,4 @@
+import os
 from telebot import types
 from ui.enums.app_action import AppAction
 from ui.messages.messages import  get_lang_info, get_message
@@ -11,9 +12,14 @@ def general_menu(user_id: int):
     btn_delete = types.InlineKeyboardButton(get_message(user_id, AppAction.DELETE_SAYING), callback_data=AppAction.DELETE_SAYING.value)
     btn_update = types.InlineKeyboardButton(get_message(user_id, AppAction.UPDATE_SAYING), callback_data=AppAction.UPDATE_SAYING.value)
     btn_config = types.InlineKeyboardButton(get_message(user_id, AppAction.CONFIG), callback_data=AppAction.CONFIG.value)
-    #btn_help = types.InlineKeyboardButton(f'{LOCALE["icons"]["help"]} {LOCALE["menu"]["help"]}', callback_data="btn_help")
+    btn_user_admin = types.InlineKeyboardButton(get_message(user_id, AppAction.USER_ADMIN), callback_data=AppAction.USER_ADMIN.value)
 
-    markup.add(btn_see, btn_delete, btn_update, btn_config, btn_new)
+    if (user_id == int(os.getenv("ADMIN_ID"))):
+        markup.add(btn_see, btn_delete, btn_update, btn_config, btn_new, btn_user_admin)
+    
+    else:
+        markup.add(btn_see, btn_update, btn_config, btn_new) 
+
     return markup
 
 def go_home_indicator(user_id: int): 
@@ -61,8 +67,9 @@ def config_menu(user_id: int):
 
     # btn_query_limit_config = types.InlineKeyboardButton(get_message(user_id, AppAction.LIMIT_CONFIG_BUTTON), callback_data=AppAction.LIMIT_CONFIG_BUTTON.value)
     btn_lang_switch_config = types.InlineKeyboardButton(get_message(user_id, AppAction.LANG_CONFIG_BUTTON), callback_data=AppAction.LANG_CONFIG_BUTTON.value)
+    btn_home = types.InlineKeyboardButton(get_message(user_id, AppAction.HOME_PAGE), callback_data=AppAction.HOME_PAGE.value)
 
-    markup.add(btn_lang_switch_config)
+    markup.add(btn_lang_switch_config,btn_home)
 
     return markup
 
@@ -82,11 +89,11 @@ def available_langs(user_id:int):
 
     return markup
         
-def acept_reject_new_users(user_id: int, new_user_id):
+def acept_reject_users(user_id: int, new_user_id):
     markup = types.InlineKeyboardMarkup(row_width=2)
 
-    btn_acept_user = types.InlineKeyboardButton(get_message(user_id, AppAction.ACEPT_USER), callback_data=f'{AppAction.ACEPT_USER.value};{new_user_id}')
-    btn_reject_user = types.InlineKeyboardButton(get_message(user_id, AppAction.REJECT_USER), callback_data=f'{AppAction.REJECT_USER.value};{new_user_id}')
+    btn_acept_user = types.InlineKeyboardButton(get_message(user_id, AppAction.ACEPT_USER), callback_data=f'{AppAction.ACEPT_USER.value};acept-{new_user_id}')
+    btn_reject_user = types.InlineKeyboardButton(get_message(user_id, AppAction.REJECT_USER), callback_data=f'{AppAction.REJECT_USER.value};reject-{new_user_id}')
         
     markup.add(btn_acept_user, btn_reject_user)
 

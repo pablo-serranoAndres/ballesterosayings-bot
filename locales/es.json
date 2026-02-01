@@ -6,7 +6,14 @@
     "acept_user": "Aceptar usuario",
     "reject_user": "Rechazar usuario",
     "new_user_acepted": "*Nuevo usuario registrado con éxito!*",
-    "new_user_rejected": "*Acceso impedido para este usuario.*"
+    "new_user_rejected": "*Acceso impedido para este usuario.*",
+    "user": {
+      "rejected": "*Usuario rechazado*",
+      "acepted": "*Usuario aceptado*",
+      "user_list": "Listado de usuarios registrados",
+      "id": "Telegram id",
+      "username": "Nombre de usuario"
+    }
   },
 
   "menu": {
@@ -16,6 +23,7 @@
     "update_saying": "Editar dicho",
     "configuration": "Configuración",
     "help": "Ayuda",
+    "user_admin": "Gestión de usuarios",
     "next_page": "Página siguiente",
     "previous_page": "Página anterior",
     "home": "Volver a inicio",

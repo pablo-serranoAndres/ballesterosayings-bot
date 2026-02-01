@@ -21,4 +21,4 @@ class User:
         self.offset = offset
         self.page_limit = page_limit
         self.lang = lang
-        self.autorized = False
+        self.autorized = None

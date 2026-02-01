@@ -8,6 +8,8 @@ class AppAction(Enum):
     DELETE_SAYING = "btn_delete_saying"
     UPDATE_SAYING = "btn_update_saying"
     CONFIG = "btn_config"
+    USER_ADMIN = "user_admin"
+
 
         # Go Home Indicator
     HOME_PAGE = "btn_home_page"
