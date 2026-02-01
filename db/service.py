@@ -5,6 +5,9 @@ from models.user import User
 from ui.enums.db_action import DBAction
 
 
+def count_users(): 
+    return 
+
 def count_sayings():
     count_sayings_DTO = handle_db("count_sayings")
     rows = count_sayings_DTO.fetchone()
@@ -61,3 +64,6 @@ def get_user_by_id (session: User) -> User:
 
 def update_saying_by_id(saying: Saying, session: User):
      handle_db(action=DBAction.UPDATE_SAYING, saying=saying, session=session)
+
+def get_all_users():
+     return handle_db(action=DBAction.GET_ALL_USERS)

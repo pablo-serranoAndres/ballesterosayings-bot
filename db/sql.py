@@ -53,6 +53,10 @@ get_user_by_id_sql = '''
             SELECT * FROM users 
             WHERE user_id = ?
             '''
+get_all_users_sql = '''
+            SELECT * FROM users 
+            '''
+
 update_lang_config_sql = '''
             UPDATE users
             SET lang = ?

@@ -50,9 +50,12 @@ def handle_db(
     
     elif action == DBAction.GET_USER_BY_ID:
         user = cursor.execute(get_user_by_id_sql, (session.user_id,))
-        
+    
         return user.fetchone()
-
+    elif action == DBAction.GET_ALL_USERS:
+        rows = cursor.execute(get_all_users_sql, )
+        return rows.fetchall()
+    
 
     conn.commit()
     cursor.close()

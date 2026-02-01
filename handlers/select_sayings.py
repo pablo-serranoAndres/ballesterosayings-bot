@@ -17,7 +17,7 @@ def handle_cb_watch_all_sayings(session:User, bot:TeleBot, chat_id: int, adition
 def get_formatted_sayings (session:User):
     sayings = get_all_sayings(session=session)
     sayings_formatted = "\n".join(build_saying_display(saying, None, session.user_id) for saying in sayings)
-    sayings_helped = f'{sayings_formatted} \n {get_help_message(session.user_id, HelpFeedback.PAGINATION_OPTIONS)}'
+    sayings_helped = f'{sayings_formatted} \n {get_help_message(session.user_id, HelpFeedback.SAYING_PAGINATION_OPTIONS)}'
 
     return sayings_helped
 

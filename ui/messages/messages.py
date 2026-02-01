@@ -164,9 +164,9 @@ def build_user_display(admin_id: int,session: User):
     user_lang = SESSIONS[admin_id].lang
     lines = []
     
-    if (session.autorized) :
+    if (session.autorized == True) :
         lines.append(f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["admin"]["user"]["acepted"]}')
-    else:
+    elif (session.autorized == False):
         lines.append(f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["admin"]["user"]["rejected"]}')
 
     lines.append(f'{LOCALE[user_lang]["admin"]["user"]["id"]}: *{session.user_id}*')
@@ -204,8 +204,11 @@ def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
 def get_help_message (user_id:int, app_location:HelpFeedback) :
     user_lang = SESSIONS[user_id].lang
 
-    if (app_location == HelpFeedback.PAGINATION_OPTIONS):
-            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["pagination_options"]}'
+    if (app_location == HelpFeedback.SAYING_PAGINATION_OPTIONS):
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["sayings_pagination_options"]}'
+    
+    elif (app_location == HelpFeedback.USERS_PAGINATION_OPTIONS):
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["users_pagination_options"]}'
     
     elif (app_location == HelpFeedback.CONGIGURATION_OPTIONS):
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}'

@@ -1,5 +1,6 @@
 from telebot import TeleBot
-from db.service import count_sayings
+from db.service import count_sayings, count_users
+from handlers.admin import show_users_paginated
 from handlers.select_sayings import show_sayings_paginated
 from models.user import User
 from ui.enums.app_action import AppAction
@@ -13,20 +14,31 @@ def handle_cb_go_home(session:User, bot:TeleBot, chat_id:int, aditional_params:s
 
 
 def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
-    if (count_sayings() < session.offset + 10):
+    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else  count_users()
+
+    if (max_count < session.offset + 10):
         session.offset = 0
-    
     else :
         session.offset = session.offset + 10
-
-    show_sayings_paginated(bot, chat_id, session)
     
+    if (session.menu_status == AppAction.WATCHING_SAYINGS):
+        show_sayings_paginated(bot, chat_id, session)
+        
+    elif (session.menu_status == AppAction.USER_ADMIN):
+        show_users_paginated(bot, session.user_id)
+
 def handle_cb_go_previous(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
-    total = count_sayings()
+    
+    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else count_users()
 
     if (session.offset - 10 < 0):
-        session.offset = (total // 10) * 10
+        session.offset = (max_count // 10) * 10
     else:
         session.offset -= 10
 
-    show_sayings_paginated(bot, chat_id, session)
+
+    if (session.menu_status == AppAction.WATCHING_SAYINGS ):
+        show_sayings_paginated(bot, chat_id, session)
+
+    elif (session.menu_status == AppAction.USER_ADMIN):
+        show_users_paginated(bot, session.user_id)
