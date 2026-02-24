@@ -59,10 +59,9 @@ def send_auth_to_admin(bot:TeleBot, admin_id:int, session:User):
                      parse_mode="Markdown") 
 
 
-def handle_user(session:User, bot:TeleBot, chat_id: int, additional_params:str):
+def handle_cb_user(session:User, bot:TeleBot, chat_id: int, additional_params:str):
     action, target_user_id = additional_params.split("-")    
 
-    print (additional_params)
     user_session = SESSIONS.get(int(target_user_id))
 
     if (action == "acept"):
@@ -103,7 +102,7 @@ def handle_user(session:User, bot:TeleBot, chat_id: int, additional_params:str):
                 user_feedback_markup)
 
 
-def handle_admin_users (session:User, bot:TeleBot, chat_id: int, additional_params:str):
+def handle_cb_admin_users (session:User, bot:TeleBot, chat_id: int, additional_params:str):
     admin_id = session.user_id
 
     session.menu_status = AppAction.USER_ADMIN

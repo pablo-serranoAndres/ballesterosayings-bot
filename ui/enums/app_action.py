@@ -52,3 +52,7 @@ class AppAction(Enum):
     WAITING_AUTH_USER = "waiting_auth"
     NEW_USER_ACEPTED = "new_user_acepted"
     NEW_USER_REJECTED = "new_user_rejected"
+
+    SAVE_NEW_SAYING = "btn_save_new_saying"
+    EDIT_NEW_SAYING = "btn_edit_new_saying"
+    DELETE_NEW_SAYING = "btn_delete_new_saying"

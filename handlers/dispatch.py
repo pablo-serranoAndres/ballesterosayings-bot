@@ -1,11 +1,11 @@
 from telebot import TeleBot
-from handlers.admin import handle_user, handle_admin_users
-from handlers.configurate_bot import handle_cb_lang_config_button, handle_cb_limit_config_button, handle_cb_show_config, handle_cb_switch_lang
-from handlers.delete_sayings import handle_cb_confirm_delete, handle_cb_delete_saying, handle_cb_keep_saying, handle_mss_delete_saying
-from handlers.edit_sayings import handle_cb_save_update_saying, handle_cb_update_saying, handle_mss_update_saying
-from handlers.new_sayings import handle_cb_new_saying, handle_mss_new_saying
-from handlers.pagination import handle_cb_go_home, handle_cb_go_next, handle_cb_go_previous
-from handlers.select_sayings import handle_cb_watch_all_sayings
+from handlers.admin import *
+from handlers.configurate_bot import *
+from handlers.delete_sayings import *
+from handlers.edit_sayings import *
+from handlers.new_sayings import *
+from handlers.pagination import *
+from handlers.select_sayings import *
 from models.user import User
 from ui.enums.app_action import AppAction
 from ui.enums.form_status import FormStatus
@@ -22,7 +22,7 @@ CALLBACK_DISPATCH = {
     AppAction.SAVE_CHANGES.value:handle_cb_save_update_saying,
     AppAction.CONFIG.value: handle_cb_show_config,
     AppAction.LANG_CONFIG_BUTTON.value: handle_cb_lang_config_button,
-    AppAction.LIMIT_CONFIG_BUTTON.value: handle_cb_limit_config_button,
+    # AppAction.LIMIT_CONFIG_BUTTON.value: handle_cb_limit_config_button,
     AppAction.DELETE_SAYING.value: handle_cb_delete_saying,
     AppAction.CONFIRM_DELETE.value: handle_cb_confirm_delete,
     AppAction.KEEP_SAYING.value: handle_cb_keep_saying,
@@ -30,10 +30,13 @@ CALLBACK_DISPATCH = {
     AppAction.NEXT_PAGE.value: handle_cb_go_next,
     AppAction.PREVIOUS_PAGE.value: handle_cb_go_previous,
     AppAction.LANG_SWITCH.value: handle_cb_switch_lang,
-    AppAction.ACEPT_USER.value: handle_user,
-    AppAction.REJECT_USER.value: handle_user,
-    AppAction.USER_ADMIN.value: handle_admin_users
+    AppAction.ACEPT_USER.value: handle_cb_user,
+    AppAction.REJECT_USER.value: handle_cb_user,
+    AppAction.USER_ADMIN.value: handle_cb_admin_users,
+    AppAction.EDITING_SAYING.value: handle_cb_edit_saying,
 
+    AppAction.SAVE_NEW_SAYING.value: handle_cb_save_new_saying,
+    # AppAction.DELETE_NEW_SAYING.value: handle_cb_confirm_delete
 
 }
 

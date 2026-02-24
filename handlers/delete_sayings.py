@@ -15,6 +15,7 @@ def handle_cb_delete_saying(session:User, bot:TeleBot, chat_id:int, aditional_pa
     session.menu_status = FormStatus.SEND_SAYING_DELETE
 
 def handle_cb_confirm_delete(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
+
     delete_saying_by_id(saying_to_eliminate[session.user_id].id) 
     bot_message(bot, chat_id, session.user_id, session.menu_status, general_menu(session.user_id))
 

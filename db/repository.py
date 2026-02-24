@@ -29,6 +29,12 @@ def handle_db(
         saying = row.fetchone()
         return saying
     
+    elif action == DBAction.SELECT_LAST_INSERT_SAYING:
+        row = cursor.execute(select_last_insert_saying_sql, (session.user_id,))
+        saying = row.fetchone()
+
+        return saying
+    
     elif action == DBAction.DELETE_SAYING.value:
         cursor.execute(delete_saying_by_id_sql,(saying_id,))
 
@@ -54,6 +60,10 @@ def handle_db(
         return user.fetchone()
     elif action == DBAction.GET_ALL_USERS:
         rows = cursor.execute(get_all_users_sql, )
+        return rows.fetchall()
+    
+    elif action == DBAction.SELECT_SAYING_BY_USER:
+        rows = cursor.execute(get_all_sayings_by_users_sql, (session.user_id,))
         return rows.fetchall()
     
 

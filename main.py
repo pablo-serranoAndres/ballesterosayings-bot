@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import telebot
 from db.config import check_versions_db
 from db.service import insert_new_user
-from handlers.admin import handle_user, send_auth_to_admin
+from handlers.admin import handle_cb_user, send_auth_to_admin
 from handlers.configurate_bot import create_session
 from handlers.dispatch import dispatch_callback, dispatch_message
 from ui.enums.app_action import AppAction
@@ -38,7 +38,7 @@ def initialize_bot(message):
     open_locale(user_id)
 
     if (session.autorized == False):
-        handle_user(session, bot, chat_id, f'reject-{user_id}')      
+        handle_cb_user(session, bot, chat_id, f'reject-{user_id}')      
         return
 
     if (session.user_id == ADMIN_ID):
@@ -52,7 +52,7 @@ def initialize_bot(message):
         bot.send_message(chat_id, get_message(user_id,AppAction.INTRODUCTION) , reply_markup=general_menu(user_id=user_id), parse_mode="Markdown") 
     
     elif (session.autorized == False) :
-        handle_user(session, bot, chat_id, f'reject-{user_id}')
+        handle_cb_user(session, bot, chat_id, f'reject-{user_id}')
 
 
 @bot.message_handler(content_types=["text"])
@@ -79,7 +79,7 @@ def callback_query(call):
     if session.autorized == True:
         dispatch_callback(call, bot, session)
     else: 
-        handle_user(session, bot, call.message.chat.id, f'reject-{user_id}')
+        handle_cb_user(session, bot, call.message.chat.id, f'reject-{user_id}')
 
 if __name__ == "__main__":
     bot.infinity_polling()

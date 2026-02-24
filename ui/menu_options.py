@@ -1,5 +1,7 @@
 import os
+from typing import List
 from telebot import types
+from models.saying import Saying
 from ui.enums.app_action import AppAction
 from ui.messages.messages import  get_lang_info, get_message
 from utils.locale import get_available_langs
@@ -96,5 +98,28 @@ def acept_reject_users(user_id: int, new_user_id):
     btn_reject_user = types.InlineKeyboardButton(get_message(user_id, AppAction.REJECT_USER), callback_data=f'{AppAction.REJECT_USER.value};reject-{new_user_id}')
         
     markup.add(btn_acept_user, btn_reject_user)
+
+    return markup
+
+def confirm_new_saying(user_id: int, new_saying_id):
+    markup = types.InlineKeyboardMarkup(row_width=3)
+
+    btn_save = types.InlineKeyboardButton(get_message(user_id, AppAction.SAVE_NEW_SAYING), callback_data=f'{AppAction.SAVE_NEW_SAYING.value};save-{new_saying_id}')
+    btn_edit = types.InlineKeyboardButton(get_message(user_id, AppAction.EDIT_NEW_SAYING), callback_data=f'{AppAction.EDIT_NEW_SAYING.value};edit-{new_saying_id}')
+    btn_delete = types.InlineKeyboardButton(get_message(user_id, AppAction.DELETE_NEW_SAYING), callback_data=f'{AppAction.DELETE_NEW_SAYING.value};delete-{new_saying_id}')
+
+    markup.add(btn_save, btn_edit, btn_delete)
+    return markup
+
+def sayings_to_edit (user_id: int, sayings: List[Saying]):
+    markup = types.InlineKeyboardMarkup(row_width=4)
+
+    for saying in sayings: 
+        markup.add(
+            types.InlineKeyboardButton(
+                saying.id, 
+                callback_data=f'{AppAction.EDITING_SAYING.value};{saying.id}'
+            )
+        )
 
     return markup

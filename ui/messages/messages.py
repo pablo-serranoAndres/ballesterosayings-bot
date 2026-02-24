@@ -65,6 +65,7 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
     # general_menu()
         elif (status == AppAction.INSERT_NEW_SAYING) :
             return f'{LOCALE[user_lang]["icons"]["new_saying"]} {LOCALE[user_lang]["menu"]["new_saying"]}'
+        
         elif (status == AppAction.WATCH_ALL_SAYINGS) :
             return f'{LOCALE[user_lang]["icons"]["select_all_sayings"]} {LOCALE[user_lang]["menu"]["select_all_sayings"]}'
         
@@ -151,6 +152,18 @@ def get_message(user_id:int, status: FormStatus | AppAction) -> str :
         elif (status == AppAction.USER_ADMIN) : 
             return f'{LOCALE[user_lang]["icons"]["author"]}{LOCALE[user_lang]["menu"]["user_admin"]}'
         
+        elif (status == AppAction.EDITING_SAYING) : 
+            return f'{LOCALE[user_lang]["icons"]["update"]}{LOCALE[user_lang]["forms"]["edit"]["select_saying"]}'
+
+        # confirm_new_saying ()
+        elif (status == AppAction.SAVE_NEW_SAYING) : 
+            return f'{LOCALE[user_lang]["icons"]["success"]} {LOCALE[user_lang]["forms"]["new_saying"]["buttons"]["save"]}'
+           
+        elif (status == AppAction.EDIT_NEW_SAYING) : 
+            return f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["new_saying"]["buttons"]["edit"]}'
+        
+        elif (status == AppAction.DELETE_NEW_SAYING) : 
+            return f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["forms"]["new_saying"]["buttons"]["delete"]}'
     else :
         return f'{LOCALE[user_lang]["feedback"]["app_error"]}'
 
@@ -158,7 +171,6 @@ def build_user_auth(admin_id: int, session:User):
     user_lang = SESSIONS[admin_id].lang
 
     return f'{LOCALE[user_lang]["icons"]["pin"]} <b>NUEVO USUARIO</b>\n\n¿Autorizar a <b>{session.username}</b> (<u>{session.user_id}</u>) a usar el bot?'
-
 
 def build_user_display(admin_id: int,session: User):
     user_lang = SESSIONS[admin_id].lang
@@ -174,7 +186,6 @@ def build_user_display(admin_id: int,session: User):
    
     return "\n".join(lines)
 
-
 def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
     user_lang = SESSIONS[user_id].lang
     header = "" 
@@ -182,6 +193,10 @@ def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
 
     if (form_status == FormStatus.SEND_SAYING_DELETE): 
         header = f'{LOCALE[user_lang]["icons"]["delete"]} {LOCALE[user_lang]["forms"]["delete"]["delete_confirmation"]}' 
+    
+    elif (form_status == FormStatus.CONFIRM_CREATION):
+        header = f'{LOCALE[user_lang]["icons"]["new_saying"]} {LOCALE[user_lang]["forms"]["new_saying"]["confirm_new_saying"]}' 
+        # footer = f'*{LOCALE[user_lang]["forms"]["edit"]["pick_option"]}*'
     
     elif (form_status == FormStatus.SEND_SAYING_UPDATE):
         header = f'{LOCALE[user_lang]["icons"]["update"]} {LOCALE[user_lang]["forms"]["edit"]["edit_confirmation"]}' 
@@ -198,8 +213,9 @@ def build_saying_display (saying: Saying, form_status: FormStatus, user_id:int):
     
     if (footer): 
         lines.append(footer)
-    
-    return "\n".join(lines)
+
+    text = ("\n".join(lines))
+    return text
 
 def get_help_message (user_id:int, app_location:HelpFeedback) :
     user_lang = SESSIONS[user_id].lang
@@ -211,7 +227,10 @@ def get_help_message (user_id:int, app_location:HelpFeedback) :
             return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["users_pagination_options"]}'
     
     elif (app_location == HelpFeedback.CONGIGURATION_OPTIONS):
-            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["menu"]["lang_config_help"]}'
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["feedback"]["lang_config_help"]}'
+    
+    elif (app_location == HelpFeedback.SAYING_TO_EDIT_CREATED):
+            return f'{LOCALE[user_lang]["icons"]["help"]} {LOCALE[user_lang]["feedback"]["editing_sayings_help"]}'
     else :
         return f'{LOCALE[user_lang]["icons"]["danger"]} {LOCALE[user_lang]["feedback"]["error"]}'
 

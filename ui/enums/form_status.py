@@ -6,6 +6,7 @@ class FormStatus(Enum):
     WAITING_TITLE = "ask_new_title"
     WAITING_DESCRIPTION = "ask_new_description"
     WAITING_AUTHOR = "ask_new_author"
+    CONFIRM_CREATION = "confirm_creation"
 
     # Delete saying
     ASK_ID_DELETE = "delete_saying"

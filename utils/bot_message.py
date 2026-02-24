@@ -12,15 +12,19 @@ def bot_message(
             markup: REPLY_MARKUP_TYPES = None, 
             saying: Saying = None):
       text = ""
+
       if (saying) :
-            if (form_status == FormStatus.SEND_SAYING_DELETE) :
-                  text = build_saying_display(saying, form_status, user_id)
-            elif (form_status == FormStatus.SEND_SAYING_UPDATE) :
-                  text = build_saying_display(saying, form_status, user_id)
+            text = build_saying_display(saying, form_status, user_id)
+            
+            # if (form_status == FormStatus.SEND_SAYING_DELETE) :
+            #       text = build_saying_display(saying, form_status, user_id)
+            # elif (form_status == FormStatus.SEND_SAYING_UPDATE) :
+            #       text = build_saying_display(saying, form_status, user_id)
 
       else :
             text = get_message(user_id, form_status)
             
+
       bot.send_message(
             chat_id,
             text,

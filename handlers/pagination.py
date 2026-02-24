@@ -1,5 +1,5 @@
 from telebot import TeleBot
-from db.service import count_sayings, count_users
+from db.service import count_sayings
 from handlers.admin import show_users_paginated
 from handlers.select_sayings import show_sayings_paginated
 from models.user import User
@@ -14,7 +14,7 @@ def handle_cb_go_home(session:User, bot:TeleBot, chat_id:int, aditional_params:s
 
 
 def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
-    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else  count_users()
+    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else  0
 
     if (max_count < session.offset + 10):
         session.offset = 0
@@ -29,7 +29,7 @@ def handle_cb_go_next(session:User, bot:TeleBot, chat_id:int, aditional_params:s
 
 def handle_cb_go_previous(session:User, bot:TeleBot, chat_id:int, aditional_params:str):
     
-    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else count_users()
+    max_count = count_sayings() if AppAction.WATCHING_SAYINGS else 0
 
     if (session.offset - 10 < 0):
         session.offset = (max_count // 10) * 10

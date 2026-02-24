@@ -5,8 +5,11 @@ from models.user import User
 from ui.enums.db_action import DBAction
 
 
-def count_users(): 
-    return 
+def get_saying_id_by_user_id(session: User): 
+    saying_DTO = handle_db(action=DBAction.SELECT_LAST_INSERT_SAYING, session=session,)
+    last_insert_saying_id = saying_DTO[0]
+    
+    return last_insert_saying_id
 
 def count_sayings():
     count_sayings_DTO = handle_db("count_sayings")
@@ -22,6 +25,7 @@ def format_sayings(sayings_DTO):
             Saying(saying_DTO[0], saying_DTO[1], saying_DTO[2], saying_DTO[3]))
     
     return sayings_formatted
+
 
 def get_all_sayings(session:User):
     sayings_DTO = handle_db(action=DBAction.SELECT_SAYINGS, session=session,)
@@ -67,3 +71,8 @@ def update_saying_by_id(saying: Saying, session: User):
 
 def get_all_users():
      return handle_db(action=DBAction.GET_ALL_USERS)
+
+def get_all_sayings_by_user(session: User):
+    sayings_DTO = handle_db(action=DBAction.SELECT_SAYING_BY_USER, session=session,)
+    return format_sayings(sayings_DTO)
+

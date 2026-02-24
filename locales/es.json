@@ -32,9 +32,7 @@
     "users_pagination_options": "*Opciones de paginación*:\n\nPuede cargar los usuarios en función de lo que haya configurado la variable `limit` en la configuración.",
     "configuration_options": "*Opciones de configuración*\n\nDesde aquí puede modificar diferentes parámetros de la aplicación.",
     "lang_config": "Cambiar el idioma",
-    "limit_config": "Modificar límite",
-    "lang_config_help": "*Cambiar el idioma*: Con esta opción podrás elegir entre los diferentes idiomas en los que está configurada la aplicación.",
-    "limit_config_help": "*Modificar límite*: Ajustando la variable `limit` podrá modificar la cantidad de dichos que se le muestran al ver todos los dichos."
+    "limit_config": "Modificar límite"
   },
 
   "feedback": {
@@ -43,9 +41,12 @@
     "warning_author": "Falta autor",
     "app_error": "*Acción no esperada.* Redirigiendo al menu principal. \n\n",
     "select_sayings": "💡 *Ayuda*\nEl icono ❗ indica que el dicho requiere edición por falta de algún elemento.",
+    "lang_config_help": "*Cambiar el idioma*: Con esta opción podrás elegir entre los diferentes idiomas en los que está configurada la aplicación.",
+    "limit_config_help": "*Modificar límite*: Ajustando la variable `limit` podrá modificar la cantidad de dichos que se le muestran al ver todos los dichos.",
     "save_saying": "*¡Dicho guardado!*\nPuedes continuar gestionando los contenidos del libro\n\n.*Seleccione una opción*",
     "not_permitted": "*¡Acción no permitida!*\n\nRedirigiendo al menu principal.\n\n",
     "no_data_found": "¡Atención!\nNo se han encontrado registros que coincidan con su búsqueda.",
+    "editing_sayings_help": "Solo tiene permiso para editar aquellos dichos que han sido creados por usted.",
     "waiting_auth": "¡Gracias por querer ayudar a gestionar los dichos de la familia Andres Ballestero!\n\nUn administrador está revisando tu solicitud. Nos pondremos en contacto contigo tan pronto como tengamos novedades. \n\n¡Gracias por tu paciencia!"
   },
 
@@ -61,7 +62,14 @@
     "new_saying": {
       "new_title": "*Nuevo dicho*\n\nIntroduce el *título* del nuevo dicho",
       "new_description": "*Nuevo dicho*\n\nEscribe la *descripción* del nuevo dicho",
-      "new_author": "*Nuevo dicho*\n\nEscribe *autor* del nuevo dicho"
+      "new_author": "*Nuevo dicho*\n\nEscribe *autor* del nuevo dicho",
+      "confirm_new_saying": "*Nuevo dicho*\n\n¿Guardar el siguiente dicho?                                       ",
+
+      "buttons": {
+        "save": "Guardar",
+        "edit": "Editar",
+        "delete": "Borrar"
+      }
     },
 
     "delete": {
@@ -74,6 +82,7 @@
     },
 
     "edit": {
+      "select_saying": "*Edición de un dicho*\n\nA continuación se mostrarán los dichos que ha introducido. \n\n*Seleccione el dicho que quiera editar:*",
       "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
       "editing_title": "*Edición de un dicho*\n\nIntroduce el *nuevo título* del dicho.",
       "editing_description": "*Edición de un dicho*\n\nIntroduce la *nueva descripción* del dicho.",
