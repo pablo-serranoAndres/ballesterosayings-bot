@@ -1,4 +1,5 @@
 # 🤖 ballesterosayingsbot
+<img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
 
 A Telegram bot to manage sayings from a book by Aragonese authors. Supports CRUD operations, multilingual filtering, and role-based access control (RBAC).
 
