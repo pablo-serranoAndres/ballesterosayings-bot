@@ -8,7 +8,7 @@ class DBAction(Enum):
     SELECT_SAYING_BY_USER = "select_by_user"
     SELECT_LAST_INSERT_SAYING = "select_last_insert_saying"
     DELETE_SAYING = "delete_saying"
-    UPDATE_SAYING = "update_saying"
+    EDIT_SAYINGS = "update_saying"
     COUNT_SAYINGS = "count_sayings"
     
     UPDATE_CONFIG = "update_config"

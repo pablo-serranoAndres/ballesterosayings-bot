@@ -1,58 +1,62 @@
 
 
 
-
-
-import os
-from dotenv import load_dotenv
-import telebot
+from config import ADMIN_ID, bot
 from db.config import check_versions_db
-from db.service import insert_new_user
-from handlers.admin import handle_cb_user, send_auth_to_admin
-from handlers.configurate_bot import create_session
-from handlers.dispatch import dispatch_callback, dispatch_message
-from ui.enums.app_action import AppAction
-from ui.menu_options import general_menu
-from ui.messages.messages import get_message
+from enums.app_action import AppAction
+from services.sessions import SESSIONS, create_session, load_session_fromDB, load_session_fromRAM
+from ui.markup import admin_general_menu, general_menu
+from utils.bot_message import bot_message
 from utils.locale import open_locale
-from utils.sessions import SESSIONS
 
 
-load_dotenv()
 check_versions_db()
-
-TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
-bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def initialize_bot(message):
     chat_id = message.chat.id
     user_id = message.from_user.id
-    session = SESSIONS.get(user_id) 
-    
-    if not session:
-        SESSIONS[user_id] = create_session(message)
-        session = SESSIONS[user_id]
+
+    SESSIONS[user_id] = (
+        load_session_fromRAM(user_id) or 
+        load_session_fromDB(user_id) or 
+        create_session(message)
+    )
+
+    session = SESSIONS[user_id] 
     
     open_locale(user_id)
 
-    if (session.autorized == False):
-        handle_cb_user(session, bot, chat_id, f'reject-{user_id}')      
-        return
+    if (user_id == ADMIN_ID):
+        bot_message(chat_id, 
+                    user_id, 
+                    AppAction.MAIN_MENU, 
+                    admin_general_menu(user_id))
+        
+    elif (session.autorized):
+        bot_message(chat_id, 
+                    user_id, 
+                    AppAction.MAIN_MENU, 
+                    general_menu(user_id))
+    else : 
+        print("TODO")
 
-    if (session.user_id == ADMIN_ID):
-        session.autorized = True
-    else: 
-        send_auth_to_admin(bot, ADMIN_ID, session)
-    
-    insert_new_user(session)
+    # if (session.autorized == False):
+    #     handle_cb_user(session, bot, chat_id, f'reject-{user_id}')      
+    #     return
 
-    if (session.autorized == True): 
-        bot.send_message(chat_id, get_message(user_id,AppAction.INTRODUCTION) , reply_markup=general_menu(user_id=user_id), parse_mode="Markdown") 
+    # if (session.user_id == ADMIN_ID):
+    #     session.autorized = True
+    # else: 
+    #     send_auth_to_admin(bot, ADMIN_ID, session)
     
-    elif (session.autorized == False) :
-        handle_cb_user(session, bot, chat_id, f'reject-{user_id}')
+    # insert_new_user(session)
+
+    # if (session.autorized == True): 
+    #     bot.send_message(chat_id, get_message(user_id,AppAction.INTRODUCTION) , reply_markup=general_menu(user_id=user_id), parse_mode="Markdown") 
+    
+    # elif (session.autorized == False) :
+    #     handle_cb_user(session, bot, chat_id, f'reject-{user_id}')
 
 
 @bot.message_handler(content_types=["text"])

@@ -4,13 +4,14 @@
 import sqlite3
 from models.saying import Saying
 from models.user import User
-from ui.enums.db_action import DBAction
+from enums.db_action import DBAction
 from db.sql import *
 
 def handle_db(
         action:DBAction, 
         saying: Saying = None,
         saying_id: int = None,
+        user_id:int = None, 
         session:User = None) :
     
     conn = sqlite3.connect("ballestero_sayings.db")
@@ -24,7 +25,7 @@ def handle_db(
         sayings = rows.fetchall()
         return sayings
     
-    elif action == DBAction.SELECT_SAYING_BY_ID.value:
+    elif action == DBAction.SELECT_SAYING_BY_ID:
         row = cursor.execute(select_saying_by_id_sql, (saying_id,))
         saying = row.fetchone()
         return saying
@@ -38,7 +39,7 @@ def handle_db(
     elif action == DBAction.DELETE_SAYING.value:
         cursor.execute(delete_saying_by_id_sql,(saying_id,))
 
-    elif action == DBAction.UPDATE_SAYING:
+    elif action == DBAction.EDIT_SAYINGS:
         cursor.execute(update_saying_by_id_sql,(saying.title, saying.description, saying.author,saying.id,))
         
     elif action == DBAction.COUNT_SAYINGS.value:
@@ -55,15 +56,15 @@ def handle_db(
         cursor.execute(insert_user_sql, (session.user_id, session.username, session.menu_status.value, session.offset, session.page_limit, session.lang))
     
     elif action == DBAction.GET_USER_BY_ID:
-        user = cursor.execute(get_user_by_id_sql, (session.user_id,))
-    
+        user = cursor.execute(get_user_by_id_sql, (user_id,))
         return user.fetchone()
+    
     elif action == DBAction.GET_ALL_USERS:
         rows = cursor.execute(get_all_users_sql, )
         return rows.fetchall()
     
     elif action == DBAction.SELECT_SAYING_BY_USER:
-        rows = cursor.execute(get_all_sayings_by_users_sql, (session.user_id,))
+        rows = cursor.execute(get_all_sayings_by_users_sql, (session.user_id,(session.page_limit*4), session.offset,))
         return rows.fetchall()
     
 

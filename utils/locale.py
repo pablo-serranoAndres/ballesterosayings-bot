@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List
 from db.service import update_lang
 from models.user import User
-from utils.sessions import SESSIONS
+from services.sessions import SESSIONS
 
 LOCALE = {}
 

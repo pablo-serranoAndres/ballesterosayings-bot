@@ -2,7 +2,7 @@ from typing import List
 from db.repository import handle_db
 from models.saying import Saying
 from models.user import User
-from ui.enums.db_action import DBAction
+from enums.db_action import DBAction
 
 
 def get_saying_id_by_user_id(session: User): 
@@ -36,7 +36,7 @@ def insert_new_saying(saying: Saying, session: User):
     handle_db(action=DBAction.INSERT_SAYING,saying=saying, session=session)
 
 def get_saying_by_id(saying_id:int):
-    saying_DTO = handle_db("select_by_id", saying_id=saying_id)
+    saying_DTO = handle_db(action=DBAction.SELECT_SAYING_BY_ID, saying_id=saying_id)
 
 
     if (saying_DTO) :
@@ -62,12 +62,22 @@ def update_autorized (session: User):
 def insert_new_user (session: User):
     handle_db(action=DBAction.INSERT_USER, session=session, )
 
-def get_user_by_id (session: User) -> User:
-    user = handle_db(action=DBAction.GET_USER_BY_ID, user_id=session.user_id)
+def get_user_by_id (user_id: int) -> User:
+    user_DB = handle_db(action=DBAction.GET_USER_BY_ID, user_id=user_id)
+
+    user =  User (
+        user_id=user_DB[1],
+        username=user_DB[2],
+        menu_status=user_DB[3],
+        offset=user_DB[4],
+        page_limit=user_DB[5],
+        lang=user_DB[6],
+        autorizated=user_DB[7],
+            )
     return user
 
 def update_saying_by_id(saying: Saying, session: User):
-     handle_db(action=DBAction.UPDATE_SAYING, saying=saying, session=session)
+     handle_db(action=DBAction.EDIT_SAYINGS, saying=saying, session=session)
 
 def get_all_users():
      return handle_db(action=DBAction.GET_ALL_USERS)

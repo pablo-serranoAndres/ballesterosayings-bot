@@ -59,7 +59,7 @@ get_all_users_sql = '''
 
 get_all_sayings_by_users_sql = '''
             SELECT * FROM sayings
-            WHERE user_id = ? 
+            WHERE user_id = ? LIMIT ? OFFSET ? 
             '''
 
 update_lang_config_sql = '''

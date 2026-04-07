@@ -1,6 +1,6 @@
 {
-  "introduction": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
-  "new_action": "Puede continuar gestionando los contenidos seleccionando cualquier opción.\n\n*Seleccione una opción*",
+  "welcome_menu": "*¡Bienvenido/a al bot de Andres-Ballestero sayings!*\n\nCon este bot podrás gestionar los dichos de la familia Andrés Ballestero.\n\n*Elige una opción:*",
+  "main_menu": "*EL HABLA DE LOS NUESTROS: Panel de gestión*\n\nPuede continuar gestionando los contenidos seleccionando cualquier opción.\n\n*Seleccione una opción*",
 
   "admin": {
     "acept_user": "Aceptar usuario",
@@ -18,7 +18,7 @@
 
   "menu": {
     "new_saying": "Nuevo dicho",
-    "select_all_sayings": "Ver dichos",
+    "handle_sayings": "Gestionar dichos",
     "delete_saying": "Borrar dicho",
     "update_saying": "Editar dicho",
     "configuration": "Configuración",

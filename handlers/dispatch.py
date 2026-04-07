@@ -7,48 +7,24 @@ from handlers.new_sayings import *
 from handlers.pagination import *
 from handlers.select_sayings import *
 from models.user import User
-from ui.enums.app_action import AppAction
-from ui.enums.form_status import FormStatus
+from enums.app_action import AppAction
+from enums.form_status import AppAction
 
 
 CALLBACK_DISPATCH = {
     AppAction.INSERT_NEW_SAYING.value: handle_cb_new_saying,
-    AppAction.WATCH_ALL_SAYINGS.value: handle_cb_watch_all_sayings,
-    AppAction.UPDATE_SAYING.value: handle_cb_update_saying,
-    AppAction.EDIT_TITLE.value: handle_cb_update_saying,
-    AppAction.EDIT_DESCRIPTION.value: handle_cb_update_saying,
-    AppAction.EDIT_AUTHOR.value: handle_cb_update_saying,
-    AppAction.EDIT_AUTHOR.value: handle_cb_update_saying,
-    AppAction.SAVE_CHANGES.value:handle_cb_save_update_saying,
-    AppAction.CONFIG.value: handle_cb_show_config,
-    AppAction.LANG_CONFIG_BUTTON.value: handle_cb_lang_config_button,
-    # AppAction.LIMIT_CONFIG_BUTTON.value: handle_cb_limit_config_button,
-    AppAction.DELETE_SAYING.value: handle_cb_delete_saying,
-    AppAction.CONFIRM_DELETE.value: handle_cb_confirm_delete,
-    AppAction.KEEP_SAYING.value: handle_cb_keep_saying,
-    AppAction.HOME_PAGE.value: handle_cb_go_home,
-    AppAction.NEXT_PAGE.value: handle_cb_go_next,
-    AppAction.PREVIOUS_PAGE.value: handle_cb_go_previous,
-    AppAction.LANG_SWITCH.value: handle_cb_switch_lang,
-    AppAction.ACEPT_USER.value: handle_cb_user,
-    AppAction.REJECT_USER.value: handle_cb_user,
-    AppAction.USER_ADMIN.value: handle_cb_admin_users,
-    AppAction.EDITING_SAYING.value: handle_cb_edit_saying,
-
-    AppAction.SAVE_NEW_SAYING.value: handle_cb_save_new_saying,
-    # AppAction.DELETE_NEW_SAYING.value: handle_cb_confirm_delete
-
+    
 }
 
 MESSAGE_DISPATCH = {
-    FormStatus.WAITING_TITLE:handle_mss_new_saying,
-    FormStatus.WAITING_DESCRIPTION:handle_mss_new_saying,
-    FormStatus.WAITING_AUTHOR:handle_mss_new_saying,
-    FormStatus.SEND_SAYING_DELETE:handle_mss_delete_saying,
-    FormStatus.WAITING_ID_UPDATE:handle_mss_update_saying,
-    FormStatus.EDITING_TITLE:handle_mss_update_saying,
-    FormStatus.EDITING_DESCRIPTION:handle_mss_update_saying,
-    FormStatus.EDITING_AUTHOR:handle_mss_update_saying,
+    AppAction.WAITING_TITLE:handle_mss_new_saying,
+    AppAction.WAITING_DESCRIPTION:handle_mss_new_saying,
+    AppAction.WAITING_AUTHOR:handle_mss_new_saying,
+    AppAction.SEND_SAYING_DELETE:handle_mss_delete_saying,
+    AppAction.WAITING_ID_UPDATE:handle_mss_update_saying,
+    AppAction.EDITING_TITLE:handle_mss_update_saying,
+    AppAction.EDITING_DESCRIPTION:handle_mss_update_saying,
+    AppAction.EDITING_AUTHOR:handle_mss_update_saying,
 
 }
 

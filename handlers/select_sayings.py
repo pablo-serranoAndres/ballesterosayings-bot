@@ -2,11 +2,11 @@
 from telebot import TeleBot
 from db.service import get_all_sayings
 from models.user import User
-from ui.enums.app_action import AppAction
-from ui.enums.help_feedback import HelpFeedback
-from ui.menu_options import next_previous_indicators
-from ui.messages.messages import build_saying_display, get_help_message
-from utils.sessions import SESSIONS
+from enums.app_action import AppAction
+from enums.help_feedback import HelpFeedback
+from services.sessions import SESSIONS
+from ui.markup import next_previous_indicators
+from ui.messages import build_saying_display, get_help_message
 
 def handle_cb_watch_all_sayings(session:User, bot:TeleBot, chat_id: int, aditional_params:str):
     SESSIONS[session.user_id].offset = 0
