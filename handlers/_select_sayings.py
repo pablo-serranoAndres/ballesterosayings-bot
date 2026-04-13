@@ -5,8 +5,8 @@ from models.user import User
 from enums.app_action import AppAction
 from enums.help_feedback import HelpFeedback
 from services.sessions import SESSIONS
-from ui.markup import next_previous_indicators
-from ui.messages import build_saying_display, get_help_message
+from ui.keyboard_factory import next_previous_indicators
+from services.messages import build_saying_display, get_help_message
 
 def handle_cb_watch_all_sayings(session:User, bot:TeleBot, chat_id: int, aditional_params:str):
     SESSIONS[session.user_id].offset = 0

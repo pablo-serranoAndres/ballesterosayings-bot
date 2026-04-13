@@ -1,11 +1,9 @@
-
-
-
 from config import ADMIN_ID, bot
 from db.config import check_versions_db
 from enums.app_action import AppAction
+from handlers.dispatch import dispatch_callback
 from services.sessions import SESSIONS, create_session, load_session_fromDB, load_session_fromRAM
-from ui.markup import admin_general_menu, general_menu
+from ui.keyboard_factory import admin_general_menu, general_menu
 from utils.bot_message import bot_message
 from utils.locale import open_locale
 
@@ -27,36 +25,9 @@ def initialize_bot(message):
     
     open_locale(user_id)
 
-    if (user_id == ADMIN_ID):
-        bot_message(chat_id, 
-                    user_id, 
-                    AppAction.MAIN_MENU, 
-                    admin_general_menu(user_id))
-        
-    elif (session.autorized):
-        bot_message(chat_id, 
-                    user_id, 
-                    AppAction.MAIN_MENU, 
-                    general_menu(user_id))
-    else : 
-        print("TODO")
+    bot_message(user_id, AppAction.MAIN_MENU)
+   
 
-    # if (session.autorized == False):
-    #     handle_cb_user(session, bot, chat_id, f'reject-{user_id}')      
-    #     return
-
-    # if (session.user_id == ADMIN_ID):
-    #     session.autorized = True
-    # else: 
-    #     send_auth_to_admin(bot, ADMIN_ID, session)
-    
-    # insert_new_user(session)
-
-    # if (session.autorized == True): 
-    #     bot.send_message(chat_id, get_message(user_id,AppAction.INTRODUCTION) , reply_markup=general_menu(user_id=user_id), parse_mode="Markdown") 
-    
-    # elif (session.autorized == False) :
-    #     handle_cb_user(session, bot, chat_id, f'reject-{user_id}')
 
 
 @bot.message_handler(content_types=["text"])
