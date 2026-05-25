@@ -4,7 +4,7 @@ from models.user import User
 from enums.app_action import AppAction
 from enums.form_status import AppAction
 from services.sessions import SESSIONS
-from ui.keyboard_factory available_langs, config_menu, general_menu
+from ui.keyboard_factory import available_langs, config_menu, general_menu
 from utils.bot_message import bot_message
 from utils.locale import switch_locale
 

@@ -3,7 +3,7 @@ from db.service import get_all_sayings_by_user, get_saying_by_id, update_saying_
 from models.user import User
 from enums.app_action import AppAction
 from enums.form_status import AppAction
-from ui.keyboard_factory go_home_indicator, next_previous_indicators, saying_item_edit, sayings_to_edit
+from ui.keyboard_factory import go_home_indicator, next_previous_indicators, saying_item_edit, sayings_to_edit
 from utils.bot_message import bot_message
 
 saying_to_update = {}

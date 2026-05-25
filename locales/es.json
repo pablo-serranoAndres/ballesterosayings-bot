@@ -51,56 +51,29 @@
     "waiting_auth": "¡Gracias por querer ayudar a gestionar los dichos de la familia Andres Ballestero!\n\nUn administrador está revisando tu solicitud. Nos pondremos en contacto contigo tan pronto como tengamos novedades. \n\n¡Gracias por tu paciencia!"
   },
 
+  "form": {
+    "new_saying": {
+      "options": {
+        "add_title": "Añadir título",
+        "add_description": "Añadir descripción",
+        "add_author": "Añadir autor",
+        "save_saying": "Guardar dicho",
+        "delete_saying": "Eliminar dicho"
+      },
+      "actions": {
+        "add_title": "*NUEVO DICHO*\n\nIndtroduzca el título del nuevo dicho.",
+        "add_description": "*NUEVO DICHO*\n\nIndtroduzca la descripción del nuevo dicho.",
+        "add_author": "*NUEVO DICHO*\n\nIndtroduzca el autor del nuevo dicho."
+      }
+    }
+  },
+
   "saying": {
     "type": "Dicho",
     "id": "ID",
     "title": "Título",
     "description": "Descripción",
     "author": "Autor"
-  },
-
-  "forms": {
-    "new_saying": {
-      "new_title": "*Nuevo dicho*\n\nIntroduce el *título* del nuevo dicho",
-      "new_description": "*Nuevo dicho*\n\nEscribe la *descripción* del nuevo dicho",
-      "new_author": "*Nuevo dicho*\n\nEscribe *autor* del nuevo dicho",
-      "confirm_new_saying": "*Nuevo dicho*\n\n¿Guardar el siguiente dicho?                                       ",
-
-      "buttons": {
-        "save": "Guardar",
-        "edit": "Editar",
-        "delete": "Borrar"
-      }
-    },
-
-    "delete": {
-      "ask_saying_id": "*Eliminación de un dicho*\n\nIntroduce el *ID* del dicho que desees eliminar",
-      "delete_confirmation": "Confirmar la eliminación de\n",
-      "keep_saying": "Mantener",
-      "delete_saying": "Eliminar",
-      "no_confirm_delete": "*Abortada la eliminación del dicho.* \n\nPuedes continuar gestionando los contenidos del libro.*Seleccione una opción*",
-      "confirm_delete": "*¡Dicho eliminado!*\n\nPuedes continuar gestionando los contenidos del libro.\n\n*Seleccione una opción*"
-    },
-
-    "edit": {
-      "select_saying": "*Edición de un dicho*\n\nA continuación se mostrarán los dichos que ha introducido. \n\n*Seleccione el dicho que quiera editar:*",
-      "ask_saying_id": "*Edición de un dicho*\n\nIntroduce el *ID* del dicho que desees editar",
-      "editing_title": "*Edición de un dicho*\n\nIntroduce el *nuevo título* del dicho.",
-      "editing_description": "*Edición de un dicho*\n\nIntroduce la *nueva descripción* del dicho.",
-      "editing_author": "*Edición de un dicho*\n\nIntroduce el *nuevo autor* del dicho.",
-      "title": "Título",
-      "description": "Descripción",
-      "author": "Autor",
-      "not_save": "Descartar cambios",
-      "save_changes": "Guardar cambios",
-      "pick_option": "Seleccione el campo que desee editar:",
-      "edit_confirmation": "¿Desea editar el siguiente dicho? \n"
-    },
-    "config": {
-      "lang": {
-        "title": "*Idiomas disponibles*:"
-      }
-    }
   },
 
   "lang_config": {
