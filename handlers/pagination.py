@@ -4,7 +4,7 @@ from handlers.admin import show_users_paginated
 from handlers.select_sayings import show_sayings_paginated
 from models.user import User
 from enums.app_action import AppAction
-from ui.markup import general_menu
+from ui.keyboard_factory general_menu
 from utils.bot_message import bot_message
 
 

@@ -7,6 +7,7 @@
     "reject_user": "Rechazar usuario",
     "new_user_acepted": "*Nuevo usuario registrado con éxito!*",
     "new_user_rejected": "*Acceso impedido para este usuario.*",
+    "user_not_autorizated": "*AVISO IMPORTANTE*\n\n Actualmente usted no cuenta con los permisos necesarios para utilizar el bot.\n\nDisculpe las molestias.",
     "user": {
       "rejected": "*Usuario rechazado*",
       "acepted": "*Usuario aceptado*",

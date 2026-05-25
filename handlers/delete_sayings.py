@@ -4,7 +4,7 @@ from db.service import delete_saying_by_id, get_saying_by_id
 from models.user import User
 from enums.app_action import AppAction
 from enums.form_status import AppAction
-from ui.markup import general_menu, go_home_indicator, saying_item_delete
+from ui.keyboard_factory general_menu, go_home_indicator, saying_item_delete
 from utils.bot_message import bot_message
 
 

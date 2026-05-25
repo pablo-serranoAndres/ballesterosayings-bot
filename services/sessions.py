@@ -1,8 +1,11 @@
 
 
+from config import ADMIN_ID
 from db.service import get_user_by_id, insert_new_user
 from enums.app_action import AppAction
 from models.user import User
+from ui.keyboard_factory import admin_general_menu, general_menu
+from utils.bot_message import bot_message
 
 
 SESSIONS: dict[int, User] = {}
@@ -14,7 +17,6 @@ def load_session_fromDB (user_id: int):
     user = get_user_by_id(user_id)
     if (user is not None):
         return user
-    print("load_session")
 
 def create_session (message):
     new_user =  User (
@@ -30,7 +32,23 @@ def create_session (message):
 
     return new_user
 
-def check_auth(user_id: int):    
-    print("TODO: check_auth")
-    autorizated = True
-    return autorizated
+def check_session_access (session: User, chat_id: int):
+    print ("check_session_access")
+
+    if (session.user_id == ADMIN_ID):
+        bot_message(session)
+        # bot_message(chat_id, 
+        #             session.user_id, 
+        #             AppAction.MAIN_MENU, 
+        #             admin_general_menu(session.user_id))
+        
+    elif (session.autorizated):
+        session.menu_status = AppAction.MAIN_MENU
+
+        bot_message(chat_id, 
+                    session.user_id, 
+                    session.menu_status, 
+                    general_menu(session.user_id))
+    else : 
+        print("TODO")
+

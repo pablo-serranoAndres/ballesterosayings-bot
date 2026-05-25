@@ -1,30 +1,16 @@
 from telebot import TeleBot
-from handlers.admin import *
-from handlers.configurate_bot import *
-from handlers.delete_sayings import *
-from handlers.edit_sayings import *
-from handlers.new_sayings import *
-from handlers.pagination import *
-from handlers.select_sayings import *
+from handlers.new_sayings import handle_cb_new_saying
 from models.user import User
 from enums.app_action import AppAction
-from enums.form_status import AppAction
 
 
 CALLBACK_DISPATCH = {
-    AppAction.INSERT_NEW_SAYING.value: handle_cb_new_saying,
+    AppAction.CB_INSERT_NEW_SAYING.value: handle_cb_new_saying,
     
 }
 
 MESSAGE_DISPATCH = {
-    AppAction.WAITING_TITLE:handle_mss_new_saying,
-    AppAction.WAITING_DESCRIPTION:handle_mss_new_saying,
-    AppAction.WAITING_AUTHOR:handle_mss_new_saying,
-    AppAction.SEND_SAYING_DELETE:handle_mss_delete_saying,
-    AppAction.WAITING_ID_UPDATE:handle_mss_update_saying,
-    AppAction.EDITING_TITLE:handle_mss_update_saying,
-    AppAction.EDITING_DESCRIPTION:handle_mss_update_saying,
-    AppAction.EDITING_AUTHOR:handle_mss_update_saying,
+
 
 }
 
